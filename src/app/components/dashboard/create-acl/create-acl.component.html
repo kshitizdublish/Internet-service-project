@@ -1,0 +1,59 @@
+<div class="create-acl-container">
+  <div class="acl-header-wrapper">
+    <div class="row">
+      <div class="create-acl-text">
+        <span class="caption-primary">{{ 'createAcl.create' | translate}}</span>
+        <span class="caption-secondary">{{ 'createAcl.acl' | translate}}</span>
+      </div>
+      <div class="acl-close-icon">
+        <a href="javascript:void(0)" (click)="closeAclForm()" title="{{ 'CreateVpnPanel.altClose' | translate}}">
+          <img src="./assets/navs/close.png" alt="{{ 'CreateVpnPanel.altClose' | translate}}">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="create-acl-form">
+
+      <div class="row acl-name">
+        <div class="col-sm-6 form-group">
+          <label>{{ 'createAcl.name' | translate}}</label>
+          <input type="text" required class="form-control aclname-input-style" [(ngModel)]="aclFormData.name">
+          <span class="separator"></span>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>{{ 'createAcl.ipProtocol' | translate}}
+          </label>
+          <select class="new-protocol-style" name="state"  required [(ngModel)]="aclFormData.ipProtocol">
+              <option *ngFor="let ipvprotocolObj of ipvprotocolList" value="{{ipvprotocolObj.value}}">{{ipvprotocolObj.label}}</option>
+          </select>
+          <span class="separator"></span>
+        </div>
+      </div>
+      <app-acl-rule #aclRule [aclFormElements]="_aclFormElements"></app-acl-rule>
+      <div class="acl-footer">
+        <div class="vpn-textarea">
+          <div class="form-group">
+            <label class="vpn-textarea-desc" for="description">{{ 'createAcl.description' | translate}}:</label>
+            <textarea class="form-control" rows="5" id="description" [(ngModel)]="aclFormData.description"></textarea>
+          </div>
+        </div>
+        <div class="submit-form text-right">
+            <div>
+                <em class="error-text-msg">{{createSiteErrorMsg}}</em>
+              </div>
+          <button type="submit" (click)="resetForm()" class="reset-acl">{{ 'createAcl.reset' | translate}}</button>
+        </div>
+        <div class="submit-form text-right">
+          <button type="submit" (click)="submitForm()" class="create-acl-button">{{ 'createAcl.createButton' | translate}}</button>
+        </div>
+      </div>
+
+
+  </div>
+  <!--<div class="acl-form-wrapper">
+
+    </div>
+    <div class="acl-footer-wrapper">
+
+    </div>-->
+</div>

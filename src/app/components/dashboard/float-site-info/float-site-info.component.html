@@ -1,0 +1,9 @@
+<div class="float-site-info">
+	<div class="show">
+		<div class="site-info  show-info-element">
+			<div  *ngFor="let siteItem of siteInfoArray ; let i= index ; let first= first ; let last = last">
+				<app-site-info-item [siteInfoItem]="siteItem" (selected)="itemSelected(i)" [lastItem]="last" [firstItem]="first" ></app-site-info-item>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,62 @@
+[
+        {
+            "site_name": "Aalberts Industries",
+            "location": "Langbroek",
+            "site_count": 5
+        },
+        {
+            "site_name": "ABN AMRO",
+            "location": "Amsterdam",
+            "site_count": 4
+        },
+        {
+            "site_name": "Amsterdam Airport Schiphol",
+            "location": "Amsterdam",
+            "site_count": 50
+        },
+        {
+            "site_name": "Bavaria Brewery",
+            "location": "Lieshout",
+            "site_count": 25
+        },
+        {
+            "site_name": "Accenture",
+            "location": "Amsterdem",
+            "site_count": 225
+        },
+        {
+            "site_name": "DAF Trucks",
+            "location": "Eindhoven",
+            "site_count": 5
+        },
+        {
+            "site_name": "DSM",
+            "location": "Heerlen",
+            "site_count": 125
+        },
+        {
+            "site_name": "ING Group",
+            "location": "Amsterdam",
+            "site_count": 5
+        },
+        {
+            "site_name": "Rabobank",
+            "location": "Utrecht",
+            "site_count": 10
+        },
+        {
+            "site_name": "Stork B.V.",
+            "location": "Naarden",
+            "site_count": 100
+        },
+        {
+            "site_name": "Unilever",
+            "location": "Rotterdam",
+            "site_count": 10
+        },
+        {
+            "site_name": "Vodafone Netherlands",
+            "location": "Maastricht",
+            "site_count": 100
+        }
+    ]

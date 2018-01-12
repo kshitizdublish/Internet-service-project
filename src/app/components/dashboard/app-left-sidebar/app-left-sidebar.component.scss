@@ -1,0 +1,84 @@
+@import "../../../common/variables";
+
+// common or reduntant CSS
+a {
+    color: $white;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+.app-side-nav__show {
+    transform: translateX(0%);
+}
+// specific CSS
+.app-side-nav {
+    overflow: visible;
+    width: 5.5%;
+    padding: 13px 0 5px;
+    background: $guardsmanRed; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($guardsmanRed, $tangerineGradient); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($guardsmanRed, $tangerineGradient); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($guardsmanRed, $tangerineGradient); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($guardsmanRed, $tangerineGradient); /* Standard syntax */
+    font-size: .92857rem;
+    position: absolute;
+    z-index: 99999;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    /*transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;*/
+
+    .service-list, .user-setting {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            font-size: 10px;
+            color: #313131;
+            &.panel-item {
+                border-top: 1px solid $copperCanyon;
+                border-bottom: 1px solid $copperCanyon;
+                padding: 12px 0;
+            }
+            &.active,
+            &:hover {
+                border-left: 2px solid $white;
+                color: $white;
+            }
+        }
+    }
+
+    .user-setting {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        a {
+            margin: 0;
+            padding: 14px 0;
+            border-top: 1px solid $orangeRoughy;
+            &:last-child {
+                border-bottom: 1px solid $orangeRoughy;
+            }
+        }
+    }
+
+    .close-list {
+        margin-bottom: 40px;
+    }
+
+    .title {
+        display: block;
+        text-align: center;
+        padding: 8px 0 0 0;
+    }
+    .setting-title {
+        display: block;
+        text-align: center;
+        padding: 8px 0 0 0;
+    }
+}

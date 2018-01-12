@@ -1,0 +1,145 @@
+@import "../../../common/variables";
+@import "../../../common/common";
+
+// reusable style
+.input-field-style {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid $iron;
+    border-radius: 0;
+    font-size: 18px;
+    color: $black;
+    height: 25px;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+    &:focus + .separator {
+        transform: scaleX(1) translateY(-2px);
+        opacity: 1;
+    }
+}
+
+.separator {
+    height: 2px;
+    width: 100%;
+    background: $tangerine;
+    display: block;
+    transform: scaleX(0) translateY(-2px);
+    transform-origin: 50%;
+    opacity: 0;
+    transition: all .15s linear;
+}
+
+// specific style
+.create-site-header {
+    padding: 20px 15px;
+    padding-top: 29px;
+    display: inline-flex;
+    width: 100%;
+    height: 57px;
+}
+
+.close-create-site {
+    position: absolute;
+    right: 4%;
+    top: 3%;
+}
+
+.heading {
+    padding: 11px 5px 0px 0px;
+    font-size: 28px;
+}
+.bold {
+    font-weight: $font-weight-bold;
+}
+
+.fa-times-circle-o {
+    right: 4%;
+    position: absolute;
+}
+
+.create-site-form {
+    margin: 0;
+    padding-top: 20px;
+    label {
+        margin-bottom: 3px;
+    }
+    textarea {
+        resize: none;
+        box-shadow: none;
+        margin-top: 6px;
+        min-height: 76px;
+        font-size: 13px;
+    }
+}
+
+.form-group {
+    margin-bottom: 2px;
+    position: relative;
+    input[type=text] {
+        background: transparent;
+    }
+    label {
+        font-size: 13px;
+        color: $nobel;
+        font-weight: normal;
+        margin-top: 5px;
+        margin-bottom: 3px;
+        display: inherit;
+    }
+    .custom-animation-label {
+        position: relative;
+        bottom: 25px;
+        z-index: 1;
+    }
+    .input-field-style::placeholder {
+        opacity: 0;
+    }
+    .input-field-style.touched ~ label,
+    .input-field-style:focus ~ label {
+        bottom: 42px;
+    }
+}
+
+.create-panel {
+    padding-left: 21px;
+    margin-bottom: 0;
+    .btn-create-site {
+        background-color: $carnation;
+        color: $white;
+        border-radius: 5px;
+        padding: 9px 41px;
+        box-shadow: 0px 1px 2px $iron;
+        outline: 0;
+        font-size: 12px
+    }
+}
+
+.create-site-header > a {
+    color: $black;
+    cursor: pointer;
+    i {
+        margin-top: 10px;
+    }
+}
+
+.error-text-msg {
+    padding: 2px 15px 15px 15px;
+    font-size: 11px;
+    color: $red;
+}
+
+.mandatory {
+    @extend .error-text;
+    padding-left: 4px;
+    font-size: 14px;
+}
+
+.button-container {
+    padding-top: 30px;
+}
+
+.description-area {
+    height: 80px;
+    font-size: 18px;
+}

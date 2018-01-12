@@ -1,0 +1,155 @@
+@import "../../common/variables";
+@import "../../common/common";
+
+//reusable style
+.btn-property {
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: bold;
+}
+
+//specific style
+.container-fluid {
+    background-image: url("../../../assets/login_image.png");
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+.login-form-panel {
+    float: right;
+    margin-bottom: 80px;
+}
+
+.login-form-section {
+    width: 65%;
+    height: 350px;
+}
+
+.login-form {
+    height: 100%;
+    box-shadow: 1px 1px 10px $silver;
+}
+
+.logo-panel {
+    padding: 15px;
+}
+
+.login-page-logo {
+    width: 260px;
+    height: 70px;
+}
+
+.login-page-left-panel {
+    margin-top: 150px;
+    padding-left: 40px;
+}
+
+.login-page-quote {
+    font-weight: 700;
+    font-size: $font-size-xxl;
+}
+
+.demo-button-panel {
+    display: inline-flex;
+}
+
+.learn-more-btn {
+    @extend .btn-property;
+    margin-right: 12px;
+    background: transparent;
+    border: 2px solid $black;
+}
+
+.demo-btn {
+    @extend .btn-property;
+    background-color: $black;
+    color: $white;
+}
+
+.login-text-input {
+    height: 40px;
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid $grey;
+    border-radius: 0px;
+    font-size: 15px;
+    background: transparent;
+    outline: none;
+    padding-left: 40px;
+    &:focus + .separator {
+        transform: scaleX(1) translateY(-2px);
+        opacity: 1;
+    }
+}
+
+.fa-user-o, .fa-lock {
+    position: absolute;
+    right: 93%;
+    top: 30%;
+    color: $darkGray;
+}
+
+form[role=login] {
+    padding: 40px;
+    border: 1px solid $white;
+    border-radius: 10px;
+    background-color: $white;
+}
+
+form[role=login] button {
+    font-size: 14px;
+    margin: 0 0 16px 0;
+    border-radius: 50px;
+    width: 150px;
+    height: 47px;
+    background-color: $tangerine;
+    outline: 0;
+    color: $white;
+}
+
+.login-btn-panel {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-addon { 
+    position: relative;
+    img {
+        position: absolute;
+    }
+}
+
+.checkbox-inline {
+    color: $darkGray;
+    padding-left: 24px;
+}
+
+.check-box {
+    position: absolute;
+    left: 26px;
+}
+
+.forgot-password-panel {
+    text-align: center;
+    a {
+        color: $boulder;
+    }
+}
+
+.col-center-block {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.separator {
+    height: 2px;
+    width: 100%;
+    background: $tangerine;
+    display: block;
+    transform: scaleX(0) translateY(-2px);
+    transform-origin: 50%;
+    opacity: 0;
+    transition: all .15s linear;
+}

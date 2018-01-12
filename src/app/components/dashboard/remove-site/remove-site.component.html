@@ -1,0 +1,60 @@
+<div class="remove-site-component">
+
+	<!-- Header -->
+	<div class="remove-site-header">
+		<img src="./assets/navs/delete.png" alt="{{ 'Remove_Site.heading' | translate }}">
+		<span class="heading">{{ 'Remove_Site.heading' | translate }}</span>
+		<a class="close-remove-form" (click)="closeRemoveForm()">
+			<img src="./assets/navs/close.png" alt="Close Form">
+		</a>
+	</div>
+
+	<!-- Remove the site's form -->
+	<div class="row remove-site-form">
+		<form [formGroup]='removeSiteForm' (ngSubmit)="submitForm(removeSiteForm.value, $event)">
+			<div class="col-sm-12 sites-list">
+				<div class="row each-site" *ngFor="let site of sitesName">
+					<a href="javascript:void(0)">
+						<ul class="col-sm-12 site-panel"
+						    (click)="site.selected = (site.selected === '' ? 'selected' :  '') ">
+
+							<li>
+								<div>
+									<input type="checkbox" checked="{{site.selected}}" class="check-site pull-left">
+								</div>
+							    <div class="site-detail">
+									<p class="site-name">{{ site.name }}</p>
+							        <p class="site-location">
+										{{ 'Remove_Site.form.location' | translate}}:
+										{{site.location}}
+									</p>
+								</div>
+							</li>
+
+						</ul>
+					</a>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-sm-7 form-group reset-panel">
+						<button type="button" class="btn reset-btn" (click)="resetForm()">
+							{{ 'Remove_Site.formBtn.resetBtn' | translate }}
+						</button>
+					</div>
+					<div class="col-sm-5 form-group delete-panel">
+						<button type="submit" class="btn delete-site-btn">
+							{{ 'Remove_Site.formBtn.deleteBtn' | translate }}
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- remove site error message display -->
+			<div>
+				<em class="error-text">{{ removeSiteErrorMsg }}</em>
+			</div>
+		</form>
+	</div>
+
+</div>

@@ -1,0 +1,612 @@
+{
+	"Commons": {
+		"validation": {
+			"mandatory": "* Fields are Mandatory"
+		},
+		"error": {
+			"internalError": "Internal Server Error",
+			"defaultError": "Some Error came",
+			"duplicate": "Duplicate Name/Location Not Allowed",
+			"latlngError": "Please Enter Valid Location Name",
+			"BAD_REQUEST": "The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing)",
+			"UNAUTHORIZED": "Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided",
+			"FORBIDDEN": "The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource, or may need an account of some sort.",
+			"NOT_FOUND": "The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.",
+			"METHOD_NOT_ALLOWED": "A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a read-only resource",
+			"NOT_ACCEPTABLE": "The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.",
+			"PROXY_AUTHENTICATION_REQUIRED": "The client must first authenticate itself with the proxy",
+			"REQUEST_TIMEOUT": "The server timed out waiting for the request. According to HTTP specifications: The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time.",
+			"EXPECTATION_FAILED": "The server cannot meet the requirements of the Expect request-header field.",
+			"TOO_MANY_REQUESTS": "The user has sent too many requests in a given amount of time. Intended for use with rate-limiting schemes.",
+			"UNAVAILABLE_FOR_LEGAL_REASONS": "A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.",
+			"INTERNAL_SERVER_ERROR": "Internal Server Error",
+			"NOT_IMPLEMENTED": "The server either does not recognize the request method, or it lacks the ability to fulfill the request",
+			"BAD_GATEWAY": "The server was acting as a gateway or proxy and received an invalid response from the upstream server.",
+			"SERVICE_UNAVAILABLE": "The server is currently unavailable (because it is overloaded or down for maintenance). Generally, this is a temporary state.",
+			"GATEWAY_TIMEOUT": "The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.",
+			"NETWORK_AUTHENTICATION_REQUIRED": "The client needs to authenticate to gain network access. Intended for use by intercepting proxies used to control access to the network (e.g., captive portals, used to require agreement to Terms of Service before granting full Internet access via a Wi-Fi hotspot)",
+			"HTTP_VERSION": "Oops! System seems to be down. Please contact network administrator."
+		}
+	},
+	"Login": {
+		"userName": "USERNAME",
+		"password": "PASSWORD",
+		"loginBtn": "LOGIN",
+		"invalidUserName": "Invalid Username or Password",
+		"keepLoginIn": "Keep me logged in",
+		"forgotPassword": "Forgot Password?",
+		"pageQuote": {
+			"part1": "Let's see the world",
+			"part2": "in a new way"
+		},
+		"viewDemo": "View demo",
+		"learnMore": "Learn more",
+		"langDropdown": {
+			"eng": "English",
+			"dutch": "Dutch"
+		}
+	},
+	"Nav": {
+		"logOut": "Log Out",
+		"backToMap": "Back To Map"
+	},
+	"Header": {
+		"searchSite": "Search Name or Location",
+		"toggleLeftPanel": "Menu Bar",
+		"customer": "CUSTOMER",
+		"portal": "PORTAL",
+		"searchPHolder": "Search Site",
+		"notification": "Notifications",
+		"search": "Search",
+		"userPhoto": "User",
+		"store": "Store",
+		"alarm": "Alarm",
+		"user": "User",
+		"userProfile": {
+			"myProfile": "My Profile",
+			"logOut": "Logout"
+		},
+		"logo": "Vodafone Ziggo"
+	},
+	"SiteInfo": {
+		"part1": "All Sites",
+		"part2": "Site(s) Online",
+		"part3": "Site(s) Offline",
+		"part4": "Site(s) Inactive",
+		"part5": "IP VPNs",
+		"part6": "Internet Access",
+		"part7": "Remote Access",
+		"part8": "Public IP"
+	},
+	"AppLeftPanel": {
+		"iconTitle": {
+			"close": "Close",
+			"tickets": "Tickets",
+			"crm": "CRM",
+			"reports": "Reports",
+			"user": "User",
+			"info": "Information",
+			"settings": "Settings"
+		}
+	},
+	"SiteInfoPage": {
+		"configure": "Configure",
+		"rules": "Rules",
+		"createSite": "Add Site",
+		"services": {
+			"heading": "Services",
+			"network": "Network",
+			"security": "Security",
+			"connectivity": "Site Details"
+		},
+		"network": {
+			"toggleServices": {
+				"ipvpn": "IP VPN",
+				"internet": "Internet Access",
+				"publicIp": "Public IP",
+				"qos": "QOS",
+				"remote": "Remote Access"
+			}
+		},
+		"security": {
+			"toggleServices": {
+				"cloudFirewall": "Cloud Firewall",
+				"acl": "ACL",
+				"dDos": "Ddos",
+				"urlFiltering": "URL Filtering",
+				"dnsBlackListing": "DNS Blacklisting",
+				"ips": "IPS"
+			}
+		},
+		"connectivity": {
+			"toggleServices": {
+				"basic": "Basic",
+				"cpe": "CPE",
+				"router": "Router",
+				"vlan": "VLAN",
+				"subnet": "Subnet",
+				"wifi": "Wi-Fi"
+			}
+		},
+		"dropDown": {
+			"option1": "Group Sites",
+			"option2": "Edit Site",
+			"option3": "Remove Site"
+		}
+	},
+	"NetworkField": {
+		"ipvpn_toggle": {
+			"vpnName": "Name",
+			"layer": "Layer",
+			"topology": "Topology",
+			"sites": "Sites",
+			"description": "Description"
+		},
+		"publicIp": {
+			"ipNumber": "Number of IP's",
+			"ipVersion": "IP Version",
+			"cidr": "CIDR",
+			"gatewayIp": "Gateway IP"
+		},
+		"qOS": {
+			"profileName": "QoS profile name",
+			"direction": "Direction",
+			"description": "Description"
+		},
+		"internetAccess": {
+			"name": "Name",
+			"publicIp": "Public Ip",
+			"protectionType": "Protection Type",
+			"protectGourpId": "Protect Groups",
+			"sourceCidrBlocks": "Source CidrBlocks",
+			"providerExtension": "Provider Extension",
+			"description": "Description"
+		},
+		"remoteAccess": {
+			"name": "Name",
+			"ipAddress": "IP Address",
+			"maxOnlineUsers": "Maximum online users",
+			"maxUsers": "Maximum users",
+			"description": "Description"
+		}
+	},
+	"SecurityField": {
+		"cloudFirewall": {
+			"acl": "Network ACL",
+			"inbound": "Inbound",
+			"type": "Type",
+			"protocol": "Protocol",
+			"pRange": "Port Range",
+			"outbound": "Outbound"
+		},
+		"publicIp": {
+			"ipNumber": "Number of IP's",
+			"ipVersion": "IP Version",
+			"cidr": "CIDR",
+			"gatewayIp": "Gateway IP"
+		},
+		"qOS": {
+			"profileName": "QoS profile name",
+			"direction": "Direction",
+			"description": "Description"
+		}
+	},
+	"ConnectivityField": {
+		"basic": {
+			"name": "Name",
+			"location": "Location",
+			"description": "Description",
+			"wanAccessType": "WAN Access Type",
+			"localCpeType": "Local CPE Type",
+			"areaName": "Area",
+			"totalUpstreamBandwidth": "Total Upstream Bandwidth",
+			"totalDownstreamBandwidth": "Total Downstream Bandwidth",
+			"vpnUpstreamBandwidth": "VPN Upstream Bandwidth",
+			"vpnDownstreamBandwidth": "VPN Downstream Bandwidth",
+			"upstreamQosProfile": "Upstream QOS",
+			"downstreamQosProfile": "Downstream QOS",
+			"runningStatus": "Running Status"
+		},
+		"cpe": {
+			"name": "Name",
+			"location": "Location",
+			"description": "Description",
+			"esn": "ESN",
+			"runningstatus": "Status"
+		},
+		"router": {
+			"name": "Name",
+			"description": "Description",
+			"siteid": "Site",
+			"gwid": "GW ID",
+			"type": "Type"
+		},
+		"vlan": {
+			"name": "Name",
+			"siteId": "site Id",
+			"vlan": "VLAN",
+			"trunkVlan": "Trunk VLAN",
+			"ports": "Ports",
+			"portsNames": "ports Name",
+			"description": "Description"
+		},
+		"subnet": {
+			"siteId": "Site Name",
+			"vlanId": "VLA  Name",
+			"virtualRoute": "Virtual Router Name",
+			"name": "Name",
+			"ipVersion": "IP Version",
+			"pageSize": "Page Size",
+			"PageNumber": "Page Number",
+			"description": "Description"
+		},
+		"wifi": {
+			"netGear": "Netgear",
+			"dLink": "dLink",
+			"createNow": "CREATE NOW"
+		}
+	},
+	"InfoPanel": {
+		"notWorking": "Not Working",
+		"online": "Online",
+		"noActive": "No Active",
+		"wifi": "Wi-Fi",
+		"internet": "Internet",
+		"vpn": "VPN",
+		"siteOnline": "Site Online",
+		"siteOffline": "Site Offline",
+		"siteInactive": "Site Inactive",
+		"VPNReachable": "VPN Reachable",
+		"VPNUnReachable": "VPN Unreachable"
+	},
+	"Create_Site": {
+		"heading": "Site",
+		"createHeading": "Create",
+		"editHeading": "Edit",
+		"close": "Close",
+		"form": {
+			"siteName": "Site Name",
+			"location": "Location",
+			"area": "Area",
+			"areaHolder": "Ziggo_Zone A",
+			"primaryAccessType": "Primary Access Type",
+			"backUpAccessType": "Backup Access Type",
+			"primaryAccessNetwork": "Primary Access Network",
+			"backUpAccessNetwork": "Backup Access Network",
+			"downstreamBwHolder": "Unlimited",
+			"cpeType": "CPE Type",
+			"qosType": "QoS Type",
+			"wanHolder": "Ethernet",
+			"description": "Description",
+			"descriptionHolder": "Describe about Site",
+			"csrType": "CSR Type"
+		},
+		"formBtn": {
+			"resetBtn": "Reset",
+			"createBtn": "CREATE",
+			"updateBtn": "Update"
+		}
+	},
+	"CustomerPanel": {
+		"addCustomer": "Add Customer",
+		"select": "--Select--",
+		"searchByLocation": "Search"
+	},
+	"SiteBandwidthInfo": {
+		"headerTitle": "Bandwidth Utilization",
+		"agg-throughput": "Current Aggregrate Throughput",
+		"date-today": "Today",
+		"date-lastweek": "Last Week",
+		"date-lastmonth": "Last Month",
+		"date-range": "Specify Date Range",
+		"bandwidthFrom": "From",
+		"bandwidthTo": "To",
+		"inbound": "Inbound",
+		"outbound": "Outbound",
+		"average": "Average"
+	},
+	"ConfigVPNPanel": {
+		"headerTitle": "VPN",
+		"form": {
+			"vpnName": "VPN Name",
+			"selectSite": "Select Site",
+			"selectLayer": "Select Layer",
+			"topologyType": "Select Topology Type",
+			"description": "Description",
+			"descriptionHolder": "Describe about VPN"
+		},
+		"formBtn": {
+			"resetBtn": "Reset",
+			"createBtn": "Configure"
+		}
+	},
+	"ErrorLocationModal": {
+		"errorHeader": "Error",
+		"bodyText": "No site available for the selected customer.",
+		"closeBtn": "Close"
+	},
+	"Alert": {
+		"okBtn": "OK"
+	},
+	"Confirmation": {
+		"button": {
+			"cancel": "Cancel",
+			"proceed": "Proceed"
+		},
+		"deleteSites": {
+			"header": "Think Again",
+			"bodyText": "Are you sure that you will permanently delete these site's from the list"
+		}
+	},
+	"QosSet": {
+		"header": "Set QoS Parametes",
+		"form": {
+			"siteName": "Site Name",
+			"cpe": "CPE",
+			"packageSettings": "QOS Package settings"
+		},
+		"formBtn": {
+			"reset": "Reset",
+			"configure": "Configure"
+		},
+		"packageName": {
+			"heading": "QoS Package Name",
+			"option1": "Silver",
+			"option2": "Premium",
+			"option3": "Classic"
+		},
+		"prioritySettings": {
+			"heading": "Port Priority Settings",
+			"ethernet1": "Gigabit Ethernet 0/0/1",
+			"ethernet2": "Gigabit Ethernet 0/0/2",
+			"ethernet3": "Gigabit Ethernet 0/0/3",
+			"ethernet4": "Gigabit Ethernet 0/0/4"
+		}
+	},
+	"Remove_Site": {
+		"heading": "Remove Site",
+		"form": {
+			"location": "location"
+		},
+		"formBtn": {
+			"resetBtn": "Reset",
+			"deleteBtn": "Delete"
+		}
+	},
+	"Edit_Site": {
+		"heading": "Edit Site",
+		"editIcon": "Edit Icon",
+		"form": {
+			"siteName": "Site Name",
+			"location": "Location",
+			"area": "Area",
+			"areaHolder": "Ziggo_Zone A",
+			"primaryAccessType": "Primary Access Type",
+			"backUpAccessType": "Backup Access Type",
+			"primaryAccessNetwork": "Primary Access Network",
+			"backUpAccessNetwork": "Backup Access Network",
+			"downstreamBwHolder": "Unlimited",
+			"csrType": "CSR Type",
+			"wanAccessType": "WAN Access Type",
+			"wanHolder": "Ethernet",
+			"description": "Description",
+			"descriptionHolder": "Describe about Site"
+		},
+		"formBtn": {
+			"resetBtn": "Reset",
+			"updateBtn": "Update"
+		}
+	},
+	"Error": {
+		"400": "Oops! System seems to be down. Please contact network administrator.",
+		"401": "Please provide correct login credentials.",
+		"403": "Oops! System seems to be down. Please contact network administrator.",
+		"404": "Could not find the record. Please contact VodafoneZiggo Administrator.",
+		"405": "Could not find the record. Please contact VodafoneZiggo Administrator.",
+		"406": "Could not find the record. Please contact VodafoneZiggo Administrator.",
+		"407": "Oops! System seems to be down. Please contact network administrator.",
+		"408": "Oops! You are out of time. Please try again after some time.",
+		"417": "Could not find the record. Please contact VodafoneZiggo Administrator.",
+		"429": "Opps! Too many requests. Please try after sometime.",
+		"451": "Oops! You are not authorized to see this information. Please contact VodafoneZiggo administrator.",
+		"500": "Oops! System seems to be down. Please contact network administrator.",
+		"501": "Oops! System seems to be down. Please contact network administrator.",
+		"502": "Oops! System seems to be down. Please contact network administrator.",
+		"503": "Oops! System seems to be down. Please contact network administrator.",
+		"504": "Oops! You are out of time. Please try again after sometime.",
+		"505": "Oops! System seems to be down. Please contact network administrator.",
+		"511": "Oops! System seems to be down. Please contact network administrator."
+	},
+	"Success": {
+		"heading": "Success",
+		"bodyText": "Site creation request raised successfully"
+	},
+	"AddCustomerPanel": {
+		"headerTitle": "New Customer",
+		"form": {
+			"customerName": "Name",
+			"customerNameHolder": "Enter full name",
+			"email": "Email Id",
+			"emailHolder": "Enter email id",
+			"phone": "Phone",
+			"phoneHolder": "Enter phone/mobile no",
+			"location": "Location",
+			"locationHolder": "Enter location",
+			"address": "Address",
+			"housenoHolder": "Enter House no/street name",
+			"cityHolder": "Enter city",
+			"coutryHolder": "Enter country",
+			"pincode": "Pincode",
+			"pincodeHolder": "Enter pincode"
+		},
+		"formBtn": {
+			"resetBtn": "Reset",
+			"createBtn": "Create"
+		}
+	},
+	"ToogleMap": {
+		"showMap": "Show Map",
+		"hideMap": "Hide Map"
+	},
+	"CreateOption": {
+		"openOption": "Create Options",
+		"closeOption": "Close Options",
+		"createSite": "Create Site",
+		"createVpn": "Create Vpn",
+		"createInternet": "Create Internet Access",
+		"createRemote": "Create Remote Access",
+		"vpn": {
+			"heading": "Create",
+			"sub-heading": "New VPN"
+		},
+		"site": {
+			"heading": "Create",
+			"sub-heading": "New Site"
+		},
+		"internet": {
+			"heading": "Create",
+			"sub-heading": "Internet Access"
+		},
+		"remote": {
+			"heading": "Create",
+			"sub-heading": "Remote Access"
+		}
+	},
+	"Notification": {
+		"alarm": "Alarm",
+		"notification": "Notification",
+		"viewAll": "VIEW ALL"
+	},
+	"CreateInternetAccess": {
+		"create": "Create",
+		"close": "Close",
+		"internetAccess": "Internet Access",
+		"accessName": "Access Name",
+		"siteName": "Site Name",
+		"allocationQuantity": "Allocation Quantity",
+		"ddosDeployment": "DDos Deployment",
+		"description": "Description",
+		"createButton": "CREATE",
+		"successMsg": "Your order for Internet Access subscription is successfully placed."
+	},
+	"CreateVpnPanel": {
+		"createVpn": "Create VPN",
+		"vpnName": "VPN Name",
+		"selectedSites": "Site(s) Selected",
+		"selectLayer": "Select Layer Type",
+		"selectTopology": "Select Topology Type",
+		"description": "Description",
+		"fullMesh": "Full Mesh",
+		"hubSpoke": "Hub Spoke",
+		"createLabel": "Create",
+		"createButton": "CREATE",
+		"vpn": "VPN",
+		"l2": "L2",
+		"l3": "L3",
+		"selectHub": "Select Hub",
+		"altClose": "close",
+		"error": {
+			"fullMesh": "Please select at least 2 locations",
+			"hubAndSpoke": "Please select at 1 Hub"
+		},
+		"success": "VPN request raised successfully"
+	},
+	"CreateRemoteAccess": {
+		"vpnName": "VPN Name",
+		"vpnNameValue": "ABN AMRO BANK VPN",
+		"create": "Create",
+		"remoteAccess": "Remote Access",
+		"maxOnlineUser": "Max Online User",
+		"siteName": "Site Name",
+		"createButton": "CREATE",
+		"close": "Close",
+		"ErrorNoVPN": "At leaset must have One VPN to create Remote Access",
+		"success": " Your order for Remote Access subscription is successfully placed"
+	},
+	"CreateFeedBack": {
+		"feedBackHeader": "Feedback",
+		"contactName": "Contact Name",
+		"email": "Email",
+		"phone": "Phone",
+		"reason": "Reason",
+		"subject": "Subject",
+		"tellUsMore": "Tell us more",
+		"submit": "Submit",
+		"contactNamePlaceholder": "Type Contact Name",
+		"emailPlaceholder": "Type email address",
+		"phonePlaceholder": "Type phone number",
+		"subjectPlaceholder": "Type subject",
+		"sidenavText": "We'd be delighted to hear your feedback or answer your queries. Please fill in the form and we'll respond as soon as we can."
+	},
+	"successPopup": {
+		"heading": "Success",
+		"body": "Feedback submitted successfully"
+	},
+	"CreateWifi": {
+		"heading": {
+			"create": "Create",
+			"wifi": "Wi-Fi"
+		},
+		"close": "Close",
+		"remove": "REMOVE",
+		"form": {
+			"name": "Name",
+			"ssidName": "SSID Name",
+			"countryCode": "Country Code",
+			"selectCode": "Select Code",
+			"ssid": "SSID(s)",
+			"type": "Type",
+			"vlanId": "VLAN ID",
+			"status": "Status",
+			"relativeRadios": "Relative Radios",
+			"authenticationMode": "Authentication Mode",
+			"pskEncriptionType": "PSK Encription Type",
+			"securityKey": "Security Key",
+			"reset": "RESET",
+			"create": "CREATE",
+			"successMsg": "Wifi created successfully."
+		}
+	},
+	"agmInfoPopup": {
+		"location": "Locatio",
+		"areaName": "Area",
+		"csrType": "CSR",
+		"wanAccesType": "WAN Access Type",
+		"ipvpnIcon": "IP VPN",
+		"wifiIcon": "Wi-Fi",
+		"lanIcon": "LAN"
+	},
+	"createAcl": {
+		"create": "Create",
+		"acl": "ACL",
+		"name": "Name",
+		"ipProtocol": "IP Protocol",
+		"rules": "Rule(s)",
+		"remove": "REMOVE",
+		"ruleNumber": "Rule Number",
+		"direction": "Direction",
+		"cidrBlock": "CIDR Block",
+		"cidrType": "CIDR Type",
+		"protocol": "Protocol",
+		"portRange": "Port Range",
+		"action": "Action",
+		"description": "Description",
+		"reset": "RESET",
+		"createButton": "CREATE",
+		"success": "ACL created successfully",
+		"error": "Rule Number has to different from previous."
+	},
+	"createContacts": {
+		"header": "Contact",
+		"sideNavText": "We'd be delighted to hear your feedback or answer your queries. Please fill in the form and we'll respond as soon as we can.",
+		"addressText":"Avenue Ceramique 300,6221 KX Maastricht,Netherlands",
+		"email":"info@vodafoneziggo.com",
+		"phone":"+31 43 355 5555"
+	},
+	"SideNav": {
+		"customerPortal": "CUSTOMER PORTAL",
+		"support": "SUPPORT",
+		"feedback": "FEEDBACK",
+		"contact": "CONTACT"
+	}
+}

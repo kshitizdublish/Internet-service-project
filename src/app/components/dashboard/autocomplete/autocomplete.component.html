@@ -1,0 +1,21 @@
+<div class="auto-complete-container">
+	<div class="input-field">
+		<input id="country" type="text" (click)="clearText()"
+		   placeholder="{{ 'Header.searchSite' | translate}}" class="validate filter-input"
+		   [(ngModel)]="query" (keyup)="filter()">
+		    <button class="customer-search-btn">
+                <img src="./assets/navs/auto-complete-search.png"
+            alt="{{ 'Header.search' | translate}}"></button>
+		<label for="country"></label>
+	</div>
+	<div class="suggestions" *ngIf="filteredList.length > 0">
+		<ul class="filteredList">
+			<li class="filteredItem" *ngFor="let item of filteredList">
+				<div (click)="select(item)">
+					<span class="itemName">{{item.name}}</span>
+					<span class="itemId">{{item.location}}</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

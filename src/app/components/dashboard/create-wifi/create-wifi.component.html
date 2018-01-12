@@ -1,0 +1,191 @@
+<div class="create-wifi side-input-panel">
+	<!-- Header -->
+	<div class="panel-close text-right">
+		<a href="javascript: void(0);" (click)="closeWifiForm()">
+			<img src="./assets/navs/close.png" alt="{{ 'CreateWifi.close' | translate }}">
+		</a>
+	</div>
+	<div class="create-wifi-header header">
+		<span class="caption-primary">{{ 'CreateWifi.heading.create' | translate }}</span>
+		<span class="caption-secondary">{{ 'CreateWifi.heading.wifi' | translate }}</span>
+	</div>
+
+	<div class="create-wifi-form">
+		<form
+			[formGroup]='createWifiForm'
+			(ngSubmit)="submitcreateWifiForm(createWifiForm.value, $event)"
+			novalidate>
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input
+							type="text" autocorrect="off" autocapitalize="off" class="form-control"
+							formControlName="name"
+							[ngClass]="{'touched': formModal.name !== ''}"
+							(keyup)="isFormActive()"
+							[(ngModel)]="formModal.name">
+						<label>{{ 'CreateWifi.form.name' | translate }}</label>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6">
+					<div class="form-group">
+						<select
+							formControlName="countryCode"
+							(change)="isFormActive()"
+							[(ngModel)]="formModal.countryCode">
+							<option
+								*ngFor="let option of countryCodeOptions" value="{{ option }}">{{ option }}</option>
+						</select>
+						<label>{{ 'CreateWifi.form.countryCode' | translate }}</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<label class="custom-label">{{ 'CreateWifi.form.ssid' | translate }}</label>
+					<ul class="wifi-rules-list">
+						<li
+							*ngFor="let page of formModal.wifiRules; let index = index"
+							[ngClass]="{'active': index === activeRule}">
+							<a
+								class="paging-item"
+								href="javascript: void(0);"
+								(click)="setActiveRule(index)">{{ index + 1 }}</a>
+						</li>
+						<li (click)="addNewWifiRule()">
+							<a class="paging-item plus-button">
+									<i class="fa fa-plus" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="wifi-rules">
+					<div class="row">
+						<div class="col-sm-12 text-right">
+							<span class="remove"
+								*ngIf="formModal.wifiRules.length > 1"
+								(click)="removeCurrentRule()">{{ 'CreateWifi.remove' | translate }}</span>
+						</div>
+					</div>
+					<div class="row">
+
+							<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input formControlName="ssidName" [(ngModel)]="formModal.wifiRules[activeRule].ssidName"
+										[ngClass]="{'touched': formModal.wifiRules[activeRule].ssidName !== ''}"
+											type="text" autocorrect="off" autocapitalize="off" class="form-control">
+										<label>{{ 'CreateWifi.form.ssidName' | translate }}</label>
+									</div>
+								</div>
+
+
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<select
+									formControlName="type"
+									(change)="isFormActive()"
+									[(ngModel)]="formModal.wifiRules[activeRule].type">
+									<option
+										*ngFor="let option of typeOptions" value="{{ option.value }}">{{ option.label }}</option>
+								</select>
+								<label>{{ 'CreateWifi.form.type' | translate }}</label>
+							</div>
+						</div>
+
+						
+					</div>
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group custom-toggle-button">
+								<label class="switch">
+									<input
+									type="checkbox"
+									[checked]="formModal.wifiRules[activeRule].isEnable"
+									(change)="isFormActive(); setwifiRuleStatus(activeRule)">
+									<span class="slider round"></span>
+									<label>{{ 'CreateWifi.form.status' | translate }}</label>
+								</label>
+								<span class="toggle-status">{{ formModal.wifiRules[activeRule].status }}</span>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<select
+									formControlName="vlanId"
+									(change)="isFormActive()"
+									[(ngModel)]="formModal.wifiRules[activeRule].vlanId">
+									<option
+										*ngFor="let option of vlanIdOptions" value="{{ option.vlan }}">{{ option.vlan }}</option>
+								</select>
+								<label>{{ 'CreateWifi.form.vlanId' | translate }}</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<select
+									formControlName="relativeRadios"
+									(change)="isFormActive()"
+									[(ngModel)]="formModal.wifiRules[activeRule].relativeRadios">
+									<option
+										*ngFor="let option of relativeRadioOptions" value="{{ option.value }}">{{ option.label }}</option>
+								</select>
+								<label>{{ 'CreateWifi.form.relativeRadios' | translate }}</label>
+							</div>
+						</div>
+
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<select
+									formControlName="authenticationMode"
+									(change)="isFormActive()"
+									[(ngModel)]="formModal.wifiRules[activeRule].authenticationMode">
+									<option
+										*ngFor="let option of authenticationModeOptions" value="{{ option.value }}">{{ option.label }}</option>
+								</select>
+								<label>{{ 'CreateWifi.form.authenticationMode' | translate }}</label>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<select
+									formControlName="pskEncriptionType"
+									(change)="isFormActive()"
+									[(ngModel)]="formModal.wifiRules[activeRule].pskEncriptionType">
+									<option
+										*ngFor="let psk of pskEncriptionTypeOptions" value="{{ psk.value }}">{{ psk.label }}</option>
+								</select>
+								<label>{{ 'CreateWifi.form.pskEncriptionType' | translate }}</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input
+									type="text" autocorrect="off" autocapitalize="off" class="form-control"
+									formControlName="securityKey"
+									[ngClass]="{'touched': formModal.wifiRules[activeRule].securityKey !== ''}"
+									(keyup)="isFormActive()"
+									[(ngModel)]="formModal.wifiRules[activeRule].securityKey">
+								<label>{{ 'CreateWifi.form.securityKey' | translate }}</label>
+							</div>
+						</div>
+					</div>
+			</div>
+
+			<div class="submit-form text-right">
+				<button type="reset">{{ 'CreateWifi.form.reset' | translate }}</button>
+				<button
+					type="submit"
+					[ngClass]="{'disabled': !isFormValid}"
+					[disabled]="!isFormValid">{{ 'CreateWifi.form.create' | translate }}</button>
+			</div>
+		</form>
+	</div>
+</div>

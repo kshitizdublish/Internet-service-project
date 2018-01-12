@@ -1,0 +1,31 @@
+@import "../../../common/variables";
+
+.user-profile-comp {
+    position: absolute;
+    top: 12%;
+    right: 2%;
+    background-color: $doveGray;
+    z-index: 999999;
+    width: 159px;
+    height: 100px;
+    box-shadow: 0 7px 20px $black;
+    .profile-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        .profile-username {
+            font-size: 18px;
+            color: $silver;
+            border-bottom: 1px solid $boulder;
+            padding: 20px;
+        }
+        .profile-logout-option {
+            padding: 8px 20px;
+            .profile-logout {
+                font-size: 14px;
+                color: $white;
+            }
+        }
+    }
+}

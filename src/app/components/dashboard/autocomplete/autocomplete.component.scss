@@ -1,0 +1,47 @@
+@import "../../../common/variables";
+
+.auto-complete-container {
+    position: absolute;
+    left: 63%;
+
+    ul {
+        list-style-type: none;
+    }
+
+    .filteredItem {
+        line-height: 45px;
+        width: 366px;
+        border: 1px solid $mercury;
+        margin-bottom: 0;
+    }
+    .filteredList {
+        background-color: $white;
+        width: 366px;
+        margin-top: 2px;
+        padding: 0;
+    }
+    .itemId {
+        float: right;
+        margin-right: 20px;
+        font-size: 16px;
+    }
+    .itemName {
+        margin-left: 20px;
+        font-size: 16px;
+    }
+    #country {
+        box-shadow: 0px 2px 10px $grayAppx  ;
+        height: 40px;
+        width: 230px;
+        border-radius: 4px;
+        padding-left:10px;
+        border: none;
+    }
+
+    .customer-search-btn {
+        margin-left: -35px;
+        background: transparent;
+        border: none;
+    }
+
+}

@@ -1,0 +1,73 @@
+@import "../../../../common/variables";
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+hr {
+    border-top: 1px solid $iron;
+    margin: 0;
+}
+.connectivity-service-field-comp {
+    overflow-y: auto;
+    height: 70vh;
+    padding: 10px 0;
+    background: $white;
+}
+.button-prop-change {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    span {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+.service-field {
+    padding: 15px 10px 15px 20px;
+    #offNet, #remoteAccess {
+        font-size: 14px;
+    }
+}
+.toggle-menu-arrow {
+    color: $doveGray;
+    float: right;
+    padding-top: 4px;
+    font-weight: bolder;
+}
+.offNetHeading {
+    color: $darkGray;
+}
+.connectivity-options {
+    font-size: 14px;
+    padding: 0px 5px;
+}
+.button-container {
+    padding-top: 30px;
+}
+.btn-create-wifi {
+    background-color: $tangerine;
+    color: $white;
+    border-radius: 50px;
+    padding: 8px 30px;
+    box-shadow: 0px 1px 2px $iron;
+    outline: 0;
+}
+
+.create-wifi-btn-panel {
+    text-align: center;
+    padding: 20px;
+}
+
+.show-wifi {
+    width: 128px;
+    height: 42.74px;
+    background: $carnation;
+    border-radius: 4px;
+    border: 1px solid $carnation;
+    color: #fff;
+    font-size: 12px;
+}

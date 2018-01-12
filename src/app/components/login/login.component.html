@@ -1,0 +1,81 @@
+<div class="container-fluid">
+	<div class="logo-panel">
+		<img class="login-page-logo" src="./assets/login_logo.png" alt="Vodafone_Ziggo" />
+	</div>
+	<div class="row">
+
+		<div class="col-md-5 login-form-panel">
+			<!-- login screen section -->
+			<div class="col-center-block">
+				<section class="login-form-section">
+					<form class="login-form" [formGroup]="loginForm" role="login"
+					    (ngSubmit)="submitForm(loginForm.value, $event)">
+
+						<div class="form-group">
+							<div class="inner-addon left-addon">
+								<img src="./assets/navs/username.png" alt="{{ 'Login.userName' | translate }}" />
+								<input [formControl]="loginForm.controls['userName']" required type="text"
+								    class="login-text-input" id="inputUserName" autocomplete="off"
+									aria-describedby="userNameHelp" placeholder=" {{ 'Login.userName' | translate }} "
+									maxlength="100" minlength="6">
+							    <span class="separator"> </span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="inner-addon left-addon">
+								<img src="./assets/navs/password.png" alt="{{ 'Login.userName' | translate }}" />
+								<input [formControl]="loginForm.controls['password']" required type="password"
+								    class="login-text-input" id="inputPassword"
+								    placeholder=" {{ 'Login.password' | translate }} " maxlength="16" minlength="6" />
+								<span class="separator"> </span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="checkbox-inline"><input type="checkbox" value=""
+								class="check-box" >{{ 'Login.keepLoginIn' | translate }}</label>
+						</div>
+
+						<!-- login error message display -->
+						<div>
+							<em class="small error-text">{{loginErrorMsg}}</em>
+						</div>
+
+						<div class="login-btn-panel">
+							<button type="submit" class="btn login-btn btn-block">
+								{{ 'Login.loginBtn' | translate }}
+							</button>
+						</div>
+
+						<div class="forgot-password-panel">
+							<a href="javascript:void(0)" (click)="forgotPassword()">
+								{{ 'Login.forgotPassword' | translate }}
+							</a>
+						</div>
+
+					</form>
+				</section>
+
+			</div>
+		</div>
+
+		<div class="col-md-7 login-page-left-panel">
+            <div class="login-page-quote">
+				<p>{{ 'Login.pageQuote.part1' | translate }}</p>
+				<p>{{ 'Login.pageQuote.part2' | translate }}</p>
+			</div>
+			<div class="demo-button-panel">
+				<button type="button" class="btn learn-more-btn" (click)="onClickLearn()">
+					{{ 'Login.learnMore' | translate }}
+				</button>
+				<!-- TODO comment, as we need this for later release -->
+				<!-- <button type="button" class="btn demo-btn" (click)="onClickDemo()">
+					{{ 'Login.viewDemo' | translate }}
+				</button> -->
+			</div>
+		</div>
+
+	</div>
+</div>
+<app-footer></app-footer>

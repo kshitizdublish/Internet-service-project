@@ -1,0 +1,215 @@
+<div class="connectivity-service-field-comp">
+	<md2-accordion [multiple]="multiple">
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.connectivity.toggleServices.basic' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="basic">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.name' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.name }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.location' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.location }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.wanAccessType' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.wanAccessType }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.localCpeType' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.localCpeType }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.totalUpstreamBandwidth' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.totalUpstreamBandwidth > 0 ? connectivityObj.siteBasic.totalUpstreamBandwidth : 'Unlimited' }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.totalDownstreamBandwidth' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.totalDownstreamBandwidth > 0 ? connectivityObj.siteBasic.totalDownstreamBandwidth : 'Unlimited' }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.vpnUpstreamBandwidth' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.vpnUpstreamBandwidth > 0 ? connectivityObj.siteBasic.vpnUpstreamBandwidth : 'Unlimited'  }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.vpnDownstreamBandwidth' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.vpnDownstreamBandwidth > 0 ? connectivityObj.siteBasic.vpnDownstreamBandwidth : 'Unlimited' }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.upstreamQosProfile' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.upstreamQosProfile }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.downstreamQosProfile' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.downstreamQosProfile }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.areaName' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.areaName }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.runningStatus' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.runningStatus }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.basic.description' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.siteBasic.description }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.connectivity.toggleServices.cpe' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="cpe">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.cpe.name' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.cpe.name }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.cpe.esn' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.cpe.esn }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.cpe.runningstatus' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.cpe.runningStatus }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.cpe.description' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.cpe.description }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.connectivity.toggleServices.router' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="router">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.router.name' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.virtualRouters.name }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.router.siteid' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.router.gwid' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.virtualRouters.gwId }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.router.description' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.virtualRouters.description }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.connectivity.toggleServices.vlan' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="vlan">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.vlan.name' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.vlan.name }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.vlan.vlan' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.vlan.vlan }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.vlan.siteId' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.vlan.siteId }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.vlan.trunkVlan' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.vlan.trunkVlan }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.vlan.ports' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.vlan.ports }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.vlan.portsNames' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.vlan.portsNames }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.vlan.description' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.vlan.description }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.connectivity.toggleServices.subnet' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="subnet">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.siteId' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.siteId }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.vlanId' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.vlanId }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.virtualRoute' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.virtualRouteId }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.name' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.name }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.ipVersion' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.ip_version }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.pageSize' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.pageSize }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.PageNumber' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.pageNum }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.subnet.description' | translate }}</span>
+						<span class="fieldDetail">{{ connectivityObj.subnet.description }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.connectivity.toggleServices.wifi' | translate }}
+					<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="wifi">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.wifi.netGear' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'ConnectivityField.wifi.dLink' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+				</ul>
+				<div class="create-wifi-btn-panel" *ngIf="hasWifi">
+					<button class="show-wifi" (click)="createWiFi()">
+						{{ 'ConnectivityField.wifi.createNow' | translate }}
+					</button>
+				</div>
+			</div>
+		</md2-accordion-tab>
+	</md2-accordion>
+</div>

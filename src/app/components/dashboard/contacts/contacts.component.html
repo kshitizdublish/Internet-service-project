@@ -1,0 +1,46 @@
+<nav class="navbar  nav-bar-props">
+   <div class="container-fluid">
+      <app-header [showLocationSearch]="showLocationSearch" [showClientListPanelAttr]="false" class="feed-back-header"></app-header>
+      <app-user-profile *ngIf="showProfileMenu"></app-user-profile>
+   </div>
+</nav>
+<div (click) = "closeAllPanels()">
+   <div class="row row-padding">
+      <div class="header-feedback">
+         {{ 'createContacts.header' | translate}}
+      </div>
+      <div class="col-sm-3">
+         <div class="col-sm-6 side-nav-text">
+            {{ 'createContacts.sideNavText' | translate }}
+         </div>
+      </div>
+      <div class="col-sm-7 padding-feedback-row">
+         <div class="row">
+            <div class="col-sm-3 address-block-props">
+               {{ 'createContacts.addressText' | translate}}
+            </div>
+         </div>
+         <div class="row address-email-props">
+            <div class="col-sm-5 address-phone-padding">
+               <div>
+                 <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                 <span class="icon-left-margin">{{ 'createContacts.email' | translate}}</span>
+              </div>
+               <div>
+                 <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                 <span class="icon-left-margin">{{ 'createContacts.phone' | translate}}</span>
+               </div>
+            </div>
+         </div>
+         <div class="address-phone-padding">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker 
+                [latitude]="lat"
+                [longitude]="lng"
+             >
+            </agm-marker>
+            </agm-map>
+         </div>
+      </div>
+   </div>
+</div>

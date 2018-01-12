@@ -1,0 +1,86 @@
+@import "../../../common/variables";
+
+.alert-dialog-popup {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(175, 175, 175, 0.7);
+    position: absolute;
+    top: 0;
+    z-index: 9999999;
+
+    .alert-dialog {
+        position: absolute;
+        top: 23%;
+        left: 37%;
+        width: 372px;
+        text-align: center;
+        z-index: 9999999;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px $black;
+    }
+
+    .alert-content {
+        background: $carnation; /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient($carnation, $redDamask); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient($carnation, $redDamask); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient($carnation, $redDamask); /* For Firefox 3.6 to 15 */
+        background: linear-gradient($carnation, $redDamask); /* Standard syntax */
+        border-radius: 10px 10px 0 0;
+    }
+
+    .alert-header {
+        border-bottom: none;
+        padding: 18px;
+    }
+
+    .alert-title {
+        color: $linen;
+        font-size: 30px;
+    }
+
+    .modified-error-image {
+        width: 46px;
+        height: 44px;
+    }
+
+    .alert-body {
+        height: 95px;
+        font-size: 14px;
+        color: $tundora;
+        padding: 0 8px;
+        .alertImage {
+            height: 100px;
+            margin: 10px;
+        }
+    }
+
+    .alert-footer {
+        border-top: none;
+        text-align: center;
+        padding: 10px 20px 20px 20px;
+    }
+
+    .errorText {
+        font-size: 16px;
+        text-align: center;
+        height: 110px;
+        padding: 10px 0;
+    }
+
+    .ok-btn {
+        width: 128px;
+        height: 42.74px;
+        background: $carnation;
+        border-radius: 4px;
+        border: 1px solid $carnation;
+        color: $white;
+        font-size: 12px;
+        outline: 0;
+        &:hover:focus:active {
+            outline: 0;
+            box-shadow: 0 1px 2px $carnationAlert;
+        }
+    }
+
+}

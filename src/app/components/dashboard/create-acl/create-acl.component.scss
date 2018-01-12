@@ -1,0 +1,199 @@
+@import "../../../common/variables";
+.create-acl-container {
+    overflow-x: hidden;
+        .form-group {
+            margin-top:10px;
+             .form-control {
+                border-radius: 0;
+            }
+        }
+        label{
+           color: $grayAppx ;
+           display: inherit;
+           font-weight: normal;
+           margin-bottom: 0px;
+        }
+        
+}
+.acl-header-wrapper{
+    padding: 25px 52px 0 52px;
+    // background: $alabaster;
+}
+.create-acl-text{
+    width: 149px;
+    height: 38px;
+    float: left;
+    margin-left: 15px;
+}
+.caption-primary {
+    color: $tundoraInternet;;
+    font-size: 28px;
+    font-weight: 700;
+}
+.caption-secondary {
+    color: $grayAppx;
+    font-size: 28px;
+}
+.acl-close-icon {
+    float: right;
+}
+.create-acl-form{
+    // background-color: $alabaster;
+    padding: 0;
+}
+.acl-name {
+    margin: 0 35px 0;
+}
+.acl-footer {
+    margin: 0 52px 0;
+}
+
+.acl-input-style:focus {
+    box-shadow: none;
+}
+
+.acl-select {
+    width: 173px;
+}
+.rule-counter {
+    margin: 5px 52px 0;
+}
+.rules {
+    margin-left: 52px;
+}
+ .vpn-textarea textarea.form-control {
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 4px 12px;
+    margin-top: 0;
+    resize: none;
+    & ~ label {
+        bottom: 106px;
+    }
+}
+.vpn-textarea-desc {
+    font-size: 13px;
+    position: initial;
+    margin-bottom: 10px;
+}
+ .aclname-input-style {
+    border: none;
+    border-bottom: 1px solid $dustyGray;
+    border-radius: none;
+    padding: 6px 0;
+    height: 24px;
+    color: $black;
+    font-size: 18px;
+    box-shadow: none;
+
+}
+.aclname-input-style:focus{
+    box-shadow: none;
+}
+.each-rule-counter{
+    width: 28px;
+    height: 24px;
+    border: 1px solid $alto;
+    display: inline-block;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+}
+.activerule {
+    width: 28px;
+    height: 24px;
+    position: relative;
+}
+.activerule:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid $dustyGray;
+    content: " ";
+    position: absolute;
+    bottom: -8px;
+    left: 35%;
+}
+.rule-adder {
+     width: 28px;
+    height: 24px;
+    border: 1px solid $alto;
+    display: inline-block;
+    margin-right: 5px;
+    background-color: $carnation;
+    font-size: 12px;
+    color: $white;
+    text-align: center;
+    line-height: 24px;
+}
+.rule-container{
+    width: 100%;
+    height: auto;
+    background-color: $seashell;
+    padding: 25px 52px 0;
+    margin-top: 6px;
+    border-top: 1px solid $mercury;
+    border-bottom: 1px solid $mercury;
+    .acl-input-style {
+        border: none;
+        border-bottom: 1px solid $dustyGray;
+        border-radius: 0;
+        height: 24px;
+        color: $black;
+        font-size: 18px;
+        box-shadow: none;
+        background-color: $seashell;
+    }
+    .form-group{
+        margin-bottom: 8px;
+    }
+}
+.acl-protocol-style {
+    border: none;
+    border-bottom: 1px solid $dustyGray;
+    border-radius: 0;
+    height: 24px;
+    color: $black;
+    font-size: 18px;
+    box-shadow: none;
+    background: transparent;
+}
+
+.create-acl-button {
+    width: 128px;
+    height: 42.74px;
+    background:  $carnation;
+    border-radius: 4px;
+    border: 1px solid $carnation;
+    color: $white;
+    font-size: 12px;
+    margin-right: 0;
+    float: right;
+}
+.reset-acl{
+    width: 128px;
+    height: 42.74px;
+    border-radius: 4px;
+    border: 1px solid $grayChateau;
+    color: $SilverChalice;
+    font-size: 12px;
+    margin-left: 70px;
+    background-color: $white;
+    float: left;
+}
+.remove{
+    text-align: right;
+    cursor: pointer;
+}
+
+.new-protocol-style{
+    width: 170px;
+    border: none;
+    border-bottom: 1px solid $dustyGray;
+    height: 24px;
+}

@@ -1,0 +1,121 @@
+<div class="configVPN-container">
+
+  <!-- Header -->
+  <div class="configVPN-header">
+    <div class="header-icon">
+      <img src="./assets/icons/vpn.png" alt="{{ 'Create_Site.buildingIcon' | translate}}">
+    </div>
+    <div class="heading-title">{{ 'ConfigVPNPanel.headerTitle' | translate }}</div>
+    <div class="panel-close-icon" (click)="closeConfigVPN()"></div>
+  </div>
+
+  <!-- Create a site form -->
+  <div class="row configVPN-form">
+    <div class="col-sm-12">
+      <form [formGroup]='configVPNForm' (ngSubmit)="submitForm(configVPNForm.value, $event)">
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'ConfigVPNPanel.form.vpnName' | translate }}
+              <span class="mandatory">*</span>
+            </label>
+            <input type="text" [formControl]="configVPNForm.controls['vpnName']" required placeholder="{{ 'ConfigVPNPanel.form.vpnName' | translate }}"
+              class="form-control input-field-style" autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'ConfigVPNPanel.form.selectSite' | translate }}
+              <span class="mandatory">*</span>
+            </label>
+            <div class="row">
+              <div class="col-sm-12 selectSite">
+                <div class="select-site-checkbox" *ngFor="let site of siteList">
+                  <input type="checkbox" required class="input-field-style site-select" name="sitenameGroup" [formControl]="configVPNForm.controls['selectSite']"
+                    [checked]="(idx === 1)" [value]="site.id">
+                  <div class="site-name">{{site.description}}</div>
+                </div>
+              </div>
+            </div>
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'ConfigVPNPanel.form.selectLayer' | translate }}
+              <span class="mandatory">*</span>
+            </label>
+            <div class="layer-container">
+              <div class="vpn-layer" *ngFor="let layer of vpnLayer; let idx = index">
+                <div class="layer-radio">
+                  <input type="radio" required class="input-field-style" name="layergroup" [formControl]="configVPNForm.controls['selectLayer']"
+                    [value]="layer.id">
+                </div>
+                <div class="layer-label">{{ layer.description }}</div>
+              </div>
+            </div>
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'ConfigVPNPanel.form.topologyType' | translate }}
+              <span class="mandatory">*</span>
+            </label>
+            <div class="topology-container">
+              <div class="full-mesh-topology">
+                <div class="full-mesh-lable-container">
+                  <div class="topology-radio">
+                    <input type="radio" required class="input-field-style full-mesh-radio" name="topologygroup" [formControl]="configVPNForm.controls['topologyType']"
+                      [value]="1" [(ngModel)]="topologyType">
+                  </div>
+                  <div class="topology-label">Full Mesh</div>
+                </div>
+                <div class="full-mesh-icon-container">
+                  <i class="full-mesh-icon" [ngClass]="{active: topologyType == 1 }" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="hub-spoke-topology">
+                <div class="hub-spoke-lable-container">
+                  <div class="topology-radio">
+                    <input type="radio" required class="input-field-style hub-spoke-radio" name="topologygroup" [formControl]="configVPNForm.controls['topologyType']"
+                      [value]="2" [(ngModel)]="topologyType">
+                  </div>
+                  <div class="topology-label">Hub Spoke</div>
+                </div>
+                <div class="hub-spoke-icon-container">
+                  <i class="hub-spoke-icon" [ngClass]="{active: topologyType == 2 }" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'ConfigVPNPanel.form.description' | translate }}</label>
+            <textarea type="text" [formControl]="configVPNForm.controls['description']" placeholder="{{ 'ConfigVPNPanel.form.descriptionHolder' | translate }}"
+              class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="row form-group configVPN-footer">
+          <div class="col-sm-7 form-group reset-panel">
+            <button type="button" class="btn reset-btn" (click)="resetForm()">
+              {{ 'ConfigVPNPanel.formBtn.resetBtn' | translate }}
+            </button>
+          </div>
+          <div class="col-sm-5 form-group configVPN-panel">
+            <button type="submit" class="btn btn-config-vpn">
+              {{ 'ConfigVPNPanel.formBtn.createBtn' | translate }}
+            </button>
+          </div>
+        </div>
+        <!-- create site error message display -->
+        <div>
+          <em class="error-text-msg">{{configVPNErrorMsg}}</em>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

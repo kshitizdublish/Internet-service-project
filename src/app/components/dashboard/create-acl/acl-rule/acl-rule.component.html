@@ -1,0 +1,68 @@
+<div>
+  <div class="row rules">{{ 'createAcl.rules' | translate}}</div>
+  <div class="row rule-counter">
+    <div class="each-rule-counter" [ngClass]="{activerule : getActive(i)}" *ngFor="let rule of aclRuleList ; let i= index" (click)="showAclRule(i)">
+      {{i+1}}
+    </div>
+    
+    <div class="rule-adder" (click)="addAclRule()">+</div>
+  </div>
+  <div class="rule-container" >
+    <div class="row remove" (click)="removeRule()">{{ 'createAcl.remove' | translate}}</div>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>{{ 'createAcl.ruleNumber' | translate}}</label>
+        <input type="text" required  maxlength="5" (keyup)="checkForNumberOnly(1, 32766, activeAclRule.ruleNumber)" class="form-control acl-input-style" [(ngModel)]="activeAclRule.ruleNumber">
+        <span class="separator"></span>
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>{{ 'createAcl.direction' | translate}}
+        </label>
+        <select class="acl-input-style acl-select" name="state" [(ngModel)]="activeAclRule.direction" required>
+          <option *ngFor="let directionObj of directionList" value="{{directionObj.value}}">{{directionObj.label}}</option>
+        </select>
+        <span class="separator"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>{{ 'createAcl.cidrBlock' | translate}}</label>
+        <input type="text" required class="form-control acl-input-style" [(ngModel)]="activeAclRule.cidrBlock">
+        <span class="separator"></span>
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>{{ 'createAcl.cidrType' | translate}}
+        </label>
+        <select class="acl-input-style acl-select" name="state" [(ngModel)]="activeAclRule.cidrType" required>
+          <option *ngFor="let cidrObj of cidrList" value="{{cidrObj.value}}">{{cidrObj.label}}</option>
+        </select>
+        <span class="separator"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>{{ 'createAcl.protocol' | translate}}
+        </label>
+        <select class="acl-input-style acl-select" name="state" [(ngModel)]="activeAclRule.protocol" required>
+          <option *ngFor="let protocolObj of protocolList" value="{{protocolObj.value}}">{{protocolObj.label}}</option>
+        </select>
+        <span class="separator"></span>
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>{{ 'createAcl.portRange' | translate}}</label>
+        <input type="text" required maxlength="32" (keyup)="checkForRangeNumberOnly(1, 32323, activeAclRule.portRange)" class="form-control acl-input-style" [(ngModel)]="activeAclRule.portRange">
+        <span class="separator"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>{{ 'createAcl.action' | translate}}
+        </label>
+        <select class="acl-input-style acl-select" name="state" [(ngModel)]="activeAclRule.action" required>
+            <option *ngFor="let actionObj of actionList" value="{{actionObj.value}}">{{actionObj.label}}</option>
+        </select>
+        <span class="separator"></span>
+      </div>
+    </div>
+  </div>
+</div>

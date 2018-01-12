@@ -1,0 +1,103 @@
+@import "../../../common/variables";
+
+.create-text {
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  color: $white;
+}
+
+.add-service-icon {
+  position: absolute;
+  top: 38vh;
+  left: 95vw;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+  z-index: 9999;
+}
+
+.rotate-image {
+  @extend .add-service-icon;
+  transform: rotate(45deg);
+}
+
+.btn-options {
+  background-color: $white;
+  border-radius: 50px;
+  padding: 25px;
+  cursor: pointer;
+  width: 81px;
+  height: 80px;
+  &:hover {
+    background:$carnation;
+  }
+}
+
+
+.add-option-panel {
+  position: absolute;
+  top: 18vh;
+  left: 152vh;
+  width: 334px;
+  height: 340px;
+  .create-vpn-option {
+    position: absolute;
+    top: 4%;
+    right: 72%;
+    .heading-vpn {
+      @extend .create-text;
+      right: -58%;
+      top: 32%;
+    }
+    .sub-heading-vpn {
+      @extend .create-text;
+      top: 50%;
+      right: -77%;
+    }
+  }
+  .create-site-option {
+    position: absolute;
+    top: 27%;
+    right: 31%;
+    .heading-site {
+      @extend .create-text;
+      top: 34%;
+      right: -57%;
+    }
+    .sub-heading-site {
+      @extend .create-text;
+      top: 53%;
+      right: -72%;
+    }
+  }
+  .create-internet-option {
+    position: absolute;
+    top: 50%;
+    right: 72%;
+    .heading-internet {
+      @extend .create-text;
+      top: 37%;
+      right: -56%;
+    }
+    .sub-heading-internet {
+      @extend .create-text;
+      top: 56%;
+      right: -118%;
+    }
+  }
+  .create-remote-option {
+    position: absolute;
+    top: 73%;
+    right: 31%;
+    .heading-remote {
+      @extend .create-text;
+      top: 37%;
+      right: -57%;
+    }
+    .sub-heading-remote {
+      @extend .create-text;
+      top: 57%;
+      right: -116%;
+    }
+  }
+}

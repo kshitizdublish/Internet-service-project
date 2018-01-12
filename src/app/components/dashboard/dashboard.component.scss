@@ -1,0 +1,11 @@
+@import "../../common/variables";
+@import '~angular-tree-component/dist/angular-tree-component.css';
+
+.right-panel {
+    height: 100vh;
+    overflow: auto;
+}
+
+.panel-container{
+    height: 100%;
+}

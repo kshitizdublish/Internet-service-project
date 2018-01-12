@@ -1,0 +1,16 @@
+@import "../../common/variables";
+
+.navbar-default {
+    background-color: $white;
+    min-height: 40px;
+}
+
+.footer-top-border {
+    border-top: 1px solid $tangerine;
+    color: $grey;
+}
+
+.navbar-text{
+    float: none;
+    font-size: 9px;
+}

@@ -1,0 +1,44 @@
+<div class="container customer-head">
+    <div class="">
+        <img src="./assets/logo.png" alt="{{ 'Header.logo' | translate}}"
+            title="{{ 'Header.logo' | translate}}">
+    </div>
+    <!-- Customer Portal Heading -->
+    <div class="customer-name-panel">
+        <div class=""><span class="customer-name-customer">{{ 'Header.customer' | translate }}</span>  <span class="customer-name-portal">{{ 'Header.portal' | translate }}</span></div>
+    </div>
+    <div class="customer-search-panel">
+        <div class="customer-search-holder">
+            <input class="customer-search-field" 
+                type="text" 
+                #searchTxt 
+                placeholder="{{ 'CustomerPanel.searchByLocation' | translate}}" 
+                (keyup)="searchClient(searchTxt.value)"/>
+            <button class="customer-search-btn">
+                <img src="./assets/navs/header_search.png"
+            alt="{{ 'Header.search' | translate}}"></button>
+        </div>
+    </div>
+    <div class="">
+        <div class="profile">
+            <a href="javascript:void(0)" title="{{ 'Header.user' | translate}}"
+                (click)="showProfileMenu()">
+                <img src="./assets/navs/header_profile.png"
+                    alt="{{ 'Header.userPhoto' | translate}}">
+            </a>
+        </div>
+    </div>
+</div>
+
+<app-user-profile *ngIf="showProfileMenuFlag"></app-user-profile>
+
+<div class="container customer-row-container">
+  <div class="row customer-each-row" *ngFor="let row of customerList">
+    <app-customer-item class="customer-each-item" *ngFor="let customer of row" 
+        (click)="onCustomerSelection(customer)"
+        [customerName]="customer.customerName" 
+        [logoPath]="customer.logoPath" 
+        [tenantName]="customer.tenantName">
+    </app-customer-item>
+  </div>
+</div>

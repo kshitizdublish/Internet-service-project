@@ -1,0 +1,54 @@
+@import "../../../../common/variables";
+ul {
+    list-style: none;
+    padding: 0;
+}
+hr {
+    border-top: 1px solid $iron;
+    margin: 0;
+}
+.security-service-field-comp {
+    overflow-y: auto;
+    height: 70vh;
+    padding: 10px 0;
+    background: $white;
+}
+.button-prop-change {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    span {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+.service-field {
+    padding: 15px 10px 15px 20px;
+    #cloudFirewall {
+        font-size: 14px;
+    }
+}
+.toggle-menu-arrow {
+    color: $doveGray;
+    float: right;
+    padding-top: 4px;
+    font-weight: bolder;
+}
+.firewallHeading {
+    color: $darkGray;
+}
+.firewallSubHeading {
+    font-weight: $font-weight-bold;
+    padding: 5px 0;
+    background: $alabaster;
+    span: nth-child(2) {
+        border-left: none !important;
+    }
+}
+.security-options {
+    font-size: 14px;
+    padding: 0px 5px;
+}

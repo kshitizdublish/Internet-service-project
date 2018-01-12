@@ -1,0 +1,93 @@
+<div class="add-customer-panel">
+  <div class="container">
+    <div class="modal-header">
+      <span class="heading-title">{{ 'AddCustomerPanel.headerTitle' | translate}}</span>
+      <a class="panel-close-icon" (click)="closeCustomerPanel()"></a>
+    </div>
+    <div class="modal-body">
+    <form [formGroup]='addCustomer' (ngSubmit)="submitForm(addCustomer.value, $event)">
+      <div class="panel-body">
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'AddCustomerPanel.form.customerName' | translate}}
+              <span class="mandatory">*</span>
+            </label>
+            <input type="text" [formControl]="addCustomer.controls['customerName']" required placeholder="{{ 'AddCustomerPanel.form.customerNameHolder' | translate}}"
+              class="form-control input-field-style" autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'AddCustomerPanel.form.email' | translate}}
+              <span class="mandatory">*</span>
+            </label>
+            <input type="text" [formControl]="addCustomer.controls['email']" required placeholder="{{ 'AddCustomerPanel.form.emailHolder' | translate}}"  class="form-control input-field-style" autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'AddCustomerPanel.form.phone' | translate}}
+              <span class="mandatory">*</span>
+            </label>
+            <input type="text" [formControl]="addCustomer.controls['phone']" required placeholder="{{ 'AddCustomerPanel.form.phoneHolder' | translate}}"
+              class="form-control input-field-style" autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'AddCustomerPanel.form.location' | translate}}
+              <span class="mandatory">*</span>
+            </label>
+            <input type="text" [formControl]="addCustomer.controls['location']" required placeholder="{{ 'AddCustomerPanel.form.locationHolder' | translate}}"
+              class="form-control input-field-style" autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'AddCustomerPanel.form.address' | translate}}
+              <span class="mandatory">*</span>
+            </label>
+            <input type="text" [formControl]="addCustomer.controls['address']" required placeholder="{{ 'AddCustomerPanel.form.housenoHolder' | translate}}" class="form-control input-field-style"
+              autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <input type="text" [formControl]="addCustomer.controls['city']" required placeholder="{{ 'AddCustomerPanel.form.cityHolder' | translate}}" class="form-control input-field-style"
+              autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <input type="text" [formControl]="addCustomer.controls['country']" required placeholder="{{ 'AddCustomerPanel.form.countryHolder' | translate}}" class="form-control input-field-style"
+              autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <span class="separator"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label>{{ 'AddCustomerPanel.form.pincode' | translate}}
+              <span class="mandatory">*</span>
+            </label>
+            <input type="text" [formControl]="addCustomer.controls['pincode']" required placeholder="{{ 'AddCustomerPanel.form.pincodeHolder' | translate}}"
+              class="form-control input-field-style" autocorrect="off" autocapitalize="off" spellcheck="off" type="text">
+            <span class="separator"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group panel-footer">
+        <div class="col-sm-7 form-group reset-panel">
+          <button type="button" class="btn reset-btn" (click)="resetForm()">
+            {{ 'AddCustomerPanel.formBtn.resetBtn' | translate }}
+          </button>
+        </div>
+        <div class="col-sm-5 form-group btn-submit-custom">
+          <button type="submit" class="btn cust-btn-submit">
+            {{ 'AddCustomerPanel.formBtn.createBtn' | translate }}
+          </button>
+        </div>
+      </div>
+      <!-- create site error message display -->
+      <div>
+        <em class="error-text-msg">{{formErrorMsg}}</em>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

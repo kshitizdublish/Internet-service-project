@@ -1,0 +1,276 @@
+@import "./variables";
+.error-text {
+    color: $red;
+}
+
+a {
+    color: $black;
+}
+
+.panel-close-icon {
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    padding: 12px 0px;
+    background-image: url('/assets/navs/close.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    right: 10px;
+    background-position: bottom;
+}
+
+select {
+    background: url('/assets/icons/down-arrow.png') no-repeat right $white;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-size: 20px 20px;
+}
+
+// reusable style
+.input-field-style {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid $iron;
+    border-radius: 0;
+    font-size: 14px;
+    color: $tundora;
+    height: 25px;
+    padding: 0;
+    &:focus + .separator {
+        transform: scaleX(1) translateY(-2px);
+        opacity: 1;
+    }
+}
+
+.separator {
+    height: 2px;
+    width: 100%;
+    background: $tangerine;
+    display: block;
+    transform: scaleX(0) translateY(-2px);
+    transform-origin: 50%;
+    opacity: 0;
+    transition: all .15s linear;
+}
+
+.reset-panel {
+    text-align: right;
+    padding-right: 0;
+    margin-bottom: 0;
+    .reset-btn {
+        background-color: transparent;
+        border-radius: 50px;
+        padding: 8px 30px;
+        border: 1px solid $tundora;
+        margin-left: 20%;
+        outline: 0;
+    }
+}
+
+.btn-submit-custom {
+    padding-left: 21px;
+    margin-bottom: 0;
+    .cust-btn-submit {
+        background-color: $tangerine;
+        color: $white;
+        border-radius: 50px;
+        padding: 8px 30px;
+        box-shadow: 0px 1px 2px $iron;
+        outline: 0;
+    }
+}
+
+.error-text-msg {
+    padding: 2px 15px 15px 15px;
+    font-size: 11px;
+    color: $red;
+}
+
+.mandatory {
+    @extend .error-text;
+    padding-left: 4px;
+    font-size: 14px;
+}
+
+.side-input-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background: $alabaster;
+    padding: 40px 52px;
+    .panel-close {
+        position: absolute;
+        right: 25px;
+        top: 31px;
+        img {
+            height: 18px;
+            width: 18px;
+        }
+    }
+    .header {
+        padding: 0 0 30px 0;
+        .caption-primary {
+            color: $tundoraInternet;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .caption-secondary {
+            color: $grayAppx;
+            font-size: 28px;
+        }
+    }
+    .form-group {
+        margin-bottom: 25px;
+        .form-control {
+            padding: 6px 0;
+        }
+        label {
+            color: $grayAppx;
+            font-size: 13px;
+            font-weight: normal;
+            position: absolute;
+            padding: 0;
+            bottom: 26px;
+            z-index: -1;
+        }
+        *::placeholder {
+            color: $silverChalice;
+            opacity: 0;
+            font-size: 18px;
+        }
+        input[type=text] {
+            border: none;
+            border-bottom: 0.5px $dustyGray;
+            color: $black;
+            font-size: 18px;
+            &.form-control {
+                background: none;
+                border: none;
+                border-radius: initial;
+                border-bottom: 0.5px solid $dustyGray;
+                box-shadow: none;
+            }
+            &.form-control.touched ~ label,
+            &.form-control:focus ~ label {
+                bottom: 50px;
+            }
+            &.form-control:focus::placeholder {
+                opacity: 1;
+            }
+        }
+        select {
+            width: 100%;
+            position: relative;
+            bottom: -9px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 0.5px solid $dustyGray;
+            color: $black;
+            font-size: 18px;
+            padding: 0;
+            & ~ label {
+                bottom: 40px;
+            }
+        }
+        textarea {
+            width: 100%;
+            height: 76px;
+            background: transparent;
+            border: 0.5px solid $dustyGray;
+            border-radius: 4px;
+            font-size: 18px;
+            padding: 4px 12px;
+            margin-top: 24px;
+            resize: none;
+            & ~ label {
+                bottom: 106px;
+            }
+        }
+    }
+    button[type=submit],
+    button[type=reset] {
+        width: 128px;
+        height: 42.74px;
+        background: $carnation;
+        border-radius: 4px;
+        border: 1px solid $carnation;
+        color: $white;
+        font-size: 12px;
+    }
+    button[type=reset] {
+        background: $white;
+        border: 1px solid $SilverChalice;
+        color: $black;
+        margin-right: 12px;
+    }
+    .disabled {
+        opacity: 0.5;
+    }
+    .custom-toggle-button {
+        position: relative;
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 41px;
+            height: 23px;
+            margin: 0;
+            bottom: -11px;
+            label {
+                top: -21px;
+            }
+        }
+        .switch input {
+            display: none;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 17px;
+            width: 17px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+        }
+        input:checked + .slider {
+            background-color: #62d400;
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px #62d400;
+        }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            left: -6px;
+        }
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        .toggle-status {
+            font-size: 18px;
+            color: $black;
+            position: relative;
+            top: 5px;
+            left: 2px;
+        }
+    }
+}

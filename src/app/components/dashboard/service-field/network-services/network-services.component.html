@@ -1,0 +1,244 @@
+<div class="network-service-field-comp">
+	<md2-accordion [multiple]="multiple">
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.network.toggleServices.ipvpn' | translate }}
+					<i class="fa fa-ellipsis-v action edit" aria-hidden="true" (click)="editIPVPN()"></i>
+			</md2-accordion-header>
+			<ul>
+				<li>
+					<span class="fieldHeading">{{ 'NetworkField.ipvpn_toggle.vpnName' | translate }}</span>
+					<span class="fieldDetail">{{ networkObj.ipvpn.name }}</span>
+				</li>
+				<li>
+					<span class="fieldHeading">{{ 'NetworkField.ipvpn_toggle.layer' | translate }}</span>
+					<span class="fieldDetail">{{ networkObj.ipvpn.layer }}</span>
+				</li>
+				<li>
+					<span class="fieldHeading">{{ 'NetworkField.ipvpn_toggle.topology' | translate }}</span>
+					<span class="fieldDetail">{{ networkObj.ipvpn.topology }}</span>
+				</li>
+				<li>
+					<span class="fieldHeading">{{ 'NetworkField.ipvpn_toggle.sites' | translate }}</span>
+					<!-- TODO: need for future -->
+					<span class="fieldDetail"><!-- {{ sitesNames.length }} -->
+						<!-- <i class="fa ipvpn-site-list" *ngIf="sitesNames.length > 0" data-toggle="collapse" data-target="#site-list" [ngClass]="{'fa-angle-up': ipvpnSitesExpanded, 'fa-angle-down': !ipvpnSitesExpanded}" aria-hidden="true" (click)="toggleIPVPNSites()"></i> -->
+					</span>
+				</li>
+			</ul>
+			<div id="site-list" class="site-list" class="collapse">
+				<table class="table table-striped">
+					<tbody>
+						<tr *ngFor="let site of sitesNames; let i=index">
+							<td>{{ i+1 }}</td>
+							<td>{{ site.siteName }}</td>
+							<td>{{ site.siteName }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<ul>
+				<li>
+					<span class="fieldHeading">{{ 'NetworkField.ipvpn_toggle.description' | translate }}</span>
+					<span class="fieldDetail"></span>
+				</li>
+			</ul>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.network.toggleServices.internet' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="internet">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.internetAccess.name' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.internetAccess.name }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.internetAccess.publicIp' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.internetAccess.publicIp }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.internetAccess.protectionType' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.internetAccess.protectionType }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.internetAccess.protectGourpId' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.internetAccess.protectGourpId }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.internetAccess.sourceCidrBlocks' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.internetAccess.sourceCidrBlocks }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.internetAccess.providerExtension' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.internetAccess.providerExtension }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.internetAccess.description' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.internetAccess.description }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.network.toggleServices.publicIp' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="wiFi">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.publicIp.ipNumber' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.publicIp.quantity }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.publicIp.ipVersion' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.publicIp.iPVersion }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.publicIp.cidr' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.publicIp.cidr }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.publicIp.gatewayIp' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.publicIp.gatewayIP }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.network.toggleServices.remote' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="wiFi">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.remoteAccess.name' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.remoteAccess.name }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.remoteAccess.ipAddress' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.remoteAccess.ipAddress }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.remoteAccess.maxOnlineUsers' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.remoteAccess.maxOnlineUsers }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.remoteAccess.maxUsers' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.remoteAccess.maxUsers }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.remoteAccess.description' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.remoteAccess.description }}</span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+		<!-- <md2-accordion-tab>  TODO: commented for later
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.network.toggleServices.qos' | translate }}</md2-accordion-header>
+			<div id="qOS"> -->
+				<!-- Tenant Network Access Panel -->
+				<!-- <div class="tenant-access-panel">
+					<table class="tenant-header">
+						<tr>
+							<td>
+								<span>Tenant Network Access</span>
+							</td>
+							<td>
+								<a href="javascript:void(0)">
+									<img src="./assets/navs/qos-plus.png" alt="Add Tenant" />
+								</a>
+							</td>
+							<td>
+								<a href="javascript:void(0)">
+									<img src="./assets/navs/qos-edit.png" alt="Edit Tenant" />
+								</a>
+							</td>
+							<td>
+								<a href="javascript:void(0)">
+									<img src="./assets/navs/qos-delete.png" alt="Delete Tenant" />
+								</a>
+							</td>
+						</tr>
+					</table>
+					<div class="search-panel">
+						<input type="search" #searchSite (keyup)="searchSiteName(searchSite.value)" placeholder="{{ 'CustomerPanel.searchByLocation' | translate}}"
+						/>
+						<img class="search-icon" src="./assets/navs/header_search.png" alt="search">
+					</div> -->
+					<!-- Site List -->
+					<!-- <div class="site-list-table">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Site Name</th>
+									<th>Status</th>
+									<th>Options</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let site of sitesNames | searchSiteName:filterargs">
+									<td>{{ site.siteName }}</td>
+									<td class="display-box site-status">
+										<div class="active-circle"></div>
+									</td>
+									<td class="site-modify-options">
+										<a href="javascript:void(0)">
+											<img src="./assets/navs/qos-edit.png" alt="Edit Site" (click)="setQosParam(site)" />
+										</a>
+										<a href="javascript:void(0)">
+											<img src="./assets/navs/qos-delete.png" alt="Delete Site" />
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div> -->
+
+				<!-- TODO will show after getting roles -->
+				<!-- Inbound Outbound Panel -->
+				<!-- <div class="bound-btn-panel">
+							<button type="button" class="btn btn-default inbound" (click)="showInbound(); activeBtn = 1" [ngClass]="{ 'active-bound-btn': (activeBtn == 1) ? true : false }"> -->
+						<!-- TODO will show/hide based on roles later -->
+				<!-- <div class="bound-btn-panel">
+							<button type="button" class="btn btn-default inbound" (click)="showInbound(); activeBtn = 1"
+								[ngClass]="{ 'active-bound-btn': (activeBtn == 1) ? true : false }">
+								Inbound
+							</button>
+							<button type="button" class="btn btn-default outbound" (click)="showOutbound(); activeBtn = 2" [ngClass]="{ 'active-bound-btn': (activeBtn == 2) ? true : false }">
+								Outbound
+							</button>
+						</div> -->
+				<!-- <ul>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.qOS.profileName' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.qOS.inBound.profileName }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.qOS.direction' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.qOS.inBound.direction }}</span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'NetworkField.qOS.description' | translate }}</span>
+						<span class="fieldDetail">{{ networkObj.qOS.inBound.description }}</span>
+					</li>
+				</ul> -->
+
+				<!-- TODO will show/hide based on roles later -->
+				<!-- <div class="overview">
+							<button class="btn btn-default service-btn rules-btn" (click)="showRules()">
+								{{ 'SiteInfoPage.rules' | translate }}
+							</button>
+							<a href="javascript:void(0)" class="updateRAccess">
+								<img src="./assets/navs/edit.png" alt="Edit" />
+							</a>
+							<a href="javascript:void(0)" class="updateRAccess">
+								<img src="./assets/navs/delete.png" alt="Delete" />
+							</a>
+						</div> -->
+			<!-- </div>
+		</md2-accordion-tab> -->
+	</md2-accordion>
+</div>

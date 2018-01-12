@@ -1,0 +1,56 @@
+<div class="create-internet-access side-input-panel">
+    <!-- Header -->
+    <div class="panel-close text-right">
+        <a href="javascript: void(0);" title="{{ 'CreateRemoteAccess.close' | translate }}"
+            (click)="closeRemoteForm()">
+            <img src="./assets/navs/close.png" alt="{{ 'CreateRemoteAccess.close' | translate }}">
+        </a>
+    </div>
+    <div class="create-internet-access-header header">
+        <span class="caption-primary">{{ 'CreateRemoteAccess.create' | translate }}</span>
+        <span class="caption-secondary">{{ 'CreateRemoteAccess.remoteAccess' | translate }}</span>
+    </div>
+
+    <!-- Remote Access Form -->
+    <div class="create-internet-access-form">
+        <form [formGroup]='createRemoteForm' (ngSubmit)="submitForm(createRemoteForm.value, $event)">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="vpn-name-label">
+                            {{ 'CreateRemoteAccess.vpnName' | translate }}
+                        </div>
+                        <div class="vpn-name-value">
+                            <select name="vpnId" [formControl]="createRemoteForm.controls['vpnId']">
+                                <option *ngFor="let ipvpn of ipvpnList" value="{{ipvpn.value}}" >
+                                    {{ ipvpn.label }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input type="text" autocorrect="off" autocapitalize="off" class="form-control" required
+                            autocapitalize="off" [ngClass]="{'touched': formModal.maxOnlineUser !== ''}"
+                            [formControl]="createRemoteForm.controls['maxOnlineUser']"
+                            (keyup)="checkForNumberOnly(1, 5);"
+                            [(ngModel)]="formModal.maxOnlineUser">
+                        <label>{{ 'CreateRemoteAccess.maxOnlineUser' | translate }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-form text-right">
+                <button type="submit">{{ 'CreateRemoteAccess.createButton' | translate }}</button>
+            </div>
+
+            <!-- create remote access error message display -->
+			<div>
+                <em class="error-text-msg">{{createRemoteErrorMsg}}</em>
+            </div>
+        </form>
+    </div>
+</div>

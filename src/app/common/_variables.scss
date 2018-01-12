@@ -1,0 +1,116 @@
+// font family
+$font                               : 'Arial', sans-serif;
+
+// colors
+$white                              : #fff;
+$black                              : #000;
+$red                                : #ff0000;
+$guardsmanRed                       : #c70000;
+$tangerineGradient                  : #f38900;
+$tangerine                          : #ff7904;
+$grey                               : #ccc;
+$doveGray                           : #676767;
+$darkGray                           : #a9a9a9;
+$tundora                            : #414141;
+$nobel                              : #b5b5b5;
+$iron                               : #ccd0d2;
+$ghostWhite                         : #f8f8ff;
+$lightGray                          : #eff0f1;
+$alabaster                          : #f9f9f9;
+$blackRussian                       : #191c21;
+$soyaBean                           : #6d6153;
+$green                              : #00ff00;
+$shipCove                           : #6d8ec5;
+$ziggo-color                        : #f6931d;
+$blue                               : #1e10ea;
+$silver                             : #c1c1c1;
+$boulder                            : #757575;
+$emperer                            : #505050;
+$SilverChalice                      : #A5A5A5;
+$inbound-color                      : #F2B533;
+$outbound-color                     : #E55856;
+$averagebound-color                 : #97C5C2;
+$osloGray                           : #95989a;
+$nodel                              : #b4b4b4;
+$gray                               : #808080;
+$doveGrey                           : #666666;
+$mineShaft                          : #232323;
+$mineShaftBorder                    : #2b2b2b;
+$vidaLoca                           : #44b928;
+$redOrange                          : #ff2f2f;
+$tundoraFloat                       : #454545;
+$mercury                            : #e6e6e6;
+$redDamask                          : #da7942;
+$nobelNotification                  : #b7b7b7;
+$emperor                            : #505050;
+$gray                               : #848484;
+$doveGrayNotification               : #707070;
+$tundoraInternet                    : #4a4a4a;
+$grayAppx                           : #858585;
+$silverChalice                      : #9d9d9d;
+$dustyGray                          : #959393;
+$carnation                          : #fc5f5f;
+$boulder                            : #7d7c7c;
+$linen                              : #f9e9dd;
+$carnationAlert                     : #f56259;
+$redDamask                          : #e17148;
+$mineShaftsp                        : #3b3636;
+$scorpionGray                       : #585858;
+$scorpionGray                       : #585858;
+$silverRemoteAccess                 : #c2c2c2;
+$silverChaliceOverlay               : #afafaf;
+$scorpion                           : #565656;
+$gallery                            : #efefef;
+$tundoraFeedback                    : #4e4e4e;
+$alto                               : #d2d2d2;
+$tundoraFeedBackHeader              : #4b4b4b;
+$altoLeftBorder                     : #cecece;
+$doveGrayAutoFill                   : #888888;
+$copperCanyon                       : #7b3912;
+$orangeRoughy                       : #ce5914;
+$emperorAddServicePanel             : #545454;
+$agmma                              : #d6dadc;
+$doveGrayAuto                       : #6b6b6b;
+$mineShaftAuto                      : #3c3c3c;
+$pinkSwanapprox                     : #c5baba;
+$seashell                           : #F1F1F1;   
+$grayChateau                        : #A1A4A7;
+
+$silverAppx                         : #bebebe;
+
+/**
+vpn color
+*/
+$vpnCheckBoxBg                      :#EFEFEF;
+$vpnCheckBoxLbl                     :#5E5E5E;
+
+
+// font size
+$font-size-l                        : large;
+$font-size-xl                       : x-large;
+$font-size-xxl                      : xx-large;
+$font-size-m                        : medium;
+$font-size-s                        : small;
+$font-size-xs                       : x-small;
+$font-size-xxs                      : xx-small;
+
+//font-weight
+$font-weight-bold                   : bold;
+$font-weight-6                      : 600;
+
+$breakpoint-px-val--sm-md           : 641px;
+$breakpoint-px-val--sm-md-landscape : 668px;
+$breakpoint-px-val--md              : 769px;
+$breakpoint-px-val--md-lg           : 820px;
+$breakpoint-px-val--lg              : 941px;
+$breakpoint-sm-md                   : "min-width: " + $breakpoint-px-val--sm-md;
+$breakpoint-sm-md-landscape         : "min-width: " + $breakpoint-px-val--sm-md-landscape;
+$breakpoint-md                      : "min-width: " + $breakpoint-px-val--md;
+$breakpoint-md-lg                   : "min-width: " + $breakpoint-px-val--md-lg;
+$breakpoint-lg                      : "min-width: " + $breakpoint-px-val--lg;
+
+@mixin transform($values){
+  -ms-transform: $values;
+  -webkit-transform: $values;
+  transform: $values;
+}

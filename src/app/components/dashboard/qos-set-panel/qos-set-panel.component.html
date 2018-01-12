@@ -1,0 +1,136 @@
+<div class="qos-set-panel">
+
+	<!-- Header -->
+	<div class="qos-set-header">
+		<span class="heading">{{ 'QosSet.header' | translate }}</span>
+		<a class="close-qos-set-panel" (click)="closeSetForm()">
+			<img src="./assets/navs/close.png" alt="close">
+		</a>
+	</div>
+
+	<!-- Set QOS Parameters form -->
+	<div class="row qos-set-form">
+		<form [formGroup]='qosSetForm' (ngSubmit)="submitForm(qosSetForm.value, $event)">
+			<div class="col-sm-12">
+				<div class="form-group division">
+					<div>
+						<label>{{ 'QosSet.form.siteName' | translate }}</label>
+						<span class="mandatory">*</span>
+					</div>
+					<div><span>{{siteDetails.siteName}}</span></div>
+				</div>
+				<div class="row division">
+					<div class="col-sm-12 form-group">
+							<div>
+								<label>{{ 'QosSet.form.cpe' | translate }}</label>
+								<span class="mandatory">*</span>
+							</div>
+						<div><span>CPE</span></div>
+					</div>
+				</div>
+
+				<div class="row division">
+					<div class="col-sm-12 mainHeading">
+						<label>{{ 'QosSet.form.packageSettings' | translate }}</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>{{ 'QosSet.packageName.heading' | translate }}</label>
+					</div>
+				</div>
+
+				<div class="row  form-group division">
+					<div class="col-md-4">
+						<input type="radio" name="packageOpt">{{ 'QosSet.packageName.option1' | translate }}
+					</div>
+					<div class="col-md-4">
+						<input type="radio" name="packageOpt">{{ 'QosSet.packageName.option2' | translate }}
+					</div>
+					<div class="col-md-4">
+						<input type="radio" name="packageOpt">{{ 'QosSet.packageName.option3' | translate }}
+					</div>
+				</div>
+
+				<!-- TODO will do later -->
+				<!-- <div class="row">
+					<div class="col-sm-12 form-group">
+						<label>{{ 'QosSet.prioritySettings.heading' | translate }}</label>
+					</div>
+				</div>
+
+
+				<div class="ethernet-setting-panel">
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<label>{{ 'QosSet.prioritySettings.ethernet1' | translate }}</label>
+						</div>
+						<div class="col-md-6 form-group">
+							<select class="form-control input-field-style" name="state">
+								<option value="Select">Select</option>
+							</select>
+							<span class="separator"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<label>{{ 'QosSet.prioritySettings.ethernet2' | translate }}</label>
+						</div>
+						<div class="col-md-6  form-group">
+							<select class="form-control input-field-style" name="state">
+								<option value="Select">Select</option>
+							</select>
+							<span class="separator"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<label>{{ 'QosSet.prioritySettings.ethernet3' | translate }}</label>
+						</div>
+						<div class="col-md-6  form-group">
+							<select class="form-control input-field-style" name="state">
+								<option value="Select">Select</option>
+							</select>
+							<span class="separator"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<label>{{ 'QosSet.prioritySettings.ethernet4' | translate }}</label>
+						</div>
+						<div class="col-md-6  form-group">
+							<select class="form-control input-field-style" name="state">
+								<option value="Select">Select</option>
+							</select>
+							<span class="separator"></span>
+						</div>
+					</div>
+				</div> -->
+				
+				<div class="row button-container">
+					<div class="col-sm-6 form-group reset-panel">
+						<!-- TODO depends on reset/cancel functionality -->
+						<!-- <button type="button" class="btn reset-btn" (click)="resetForm()">
+							{{ 'QosSet.formBtn.reset' | translate }}
+						</button> -->
+					</div>
+					<div class="col-sm-6 form-group configure-panel">
+						<button type="submit" class="btn btn-configure-settings">
+							{{ 'QosSet.formBtn.configure' | translate }}
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- create site error message display -->
+			<div>
+				<em class="error-text-msg">{{qosSetErrorMsg}}</em>
+			</div>
+		</form>
+	</div>
+
+</div>

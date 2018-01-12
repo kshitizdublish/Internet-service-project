@@ -1,0 +1,47 @@
+<!--Toggle for create site and create vpn-->
+<div class="add-service-icon" [ngClass]="{ 'rotate-image': openWindow }" (click)="onClickAddServiceBtn()">
+	<a href="javascript:void(0)">
+			<img src="./assets/navs/create_site.png" alt="{{ 'CreateOption.openOption' | translate }}">
+	</a>
+</div>
+
+<div class="add-options">
+	<div class="add-option-panel" *ngIf="openWindow">
+			<div class="create-vpn-option btn-options" (click)="createVpn()" title="{{ 'CreateOption.createVpn' | translate }}" (mouseover)="showwhiteImgVpn = true" (mouseout)="showwhiteImgVpn = false">
+					<img src="{{ showwhiteImgVpn ? '/assets/navs/sp-vpn-hover.png' : './assets/navs/sp-vpn.png'}}" alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+					<div class="heading-vpn">
+							<span>{{ 'CreateOption.vpn.heading' | translate }}</span>
+					</div>
+					<div class="sub-heading-vpn">
+							<span>{{ 'CreateOption.vpn.sub-heading' | translate }}</span>
+					</div>
+			</div>
+			<div class="create-site-option btn-options" (click)="createSite()" title="{{ 'CreateOption.createSite' | translate }}" (mouseover)="showwhiteImgSite = true" (mouseout)="showwhiteImgSite = false">
+					<img src="{{ showwhiteImgSite ? './assets/navs/sp-site-hover.png' : './assets/navs/sp-site.png'}}" alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+					<div class="heading-site">
+							<span>{{ 'CreateOption.site.heading' | translate }}</span>
+					</div>
+					<div class="sub-heading-site">
+							<span>{{ 'CreateOption.site.sub-heading' | translate }}</span>
+					</div>
+			</div>
+			<div class="create-internet-option btn-options" title="{{ 'CreateOption.createInternet' | translate }}" (click)="toggleCreateInternetForm()" (mouseover)="showwhiteImgInternet = true" (mouseout)="showwhiteImgInternet = false">
+					<img src="{{ showwhiteImgInternet ? '/assets/navs/sp-internet-access-hover.png' : './assets/navs/sp-internet-access.png'}}" alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+					<div class="heading-internet">
+							<span>{{ 'CreateOption.internet.heading' | translate }}</span>
+					</div>
+					<div class="sub-heading-internet">
+							<span>{{ 'CreateOption.internet.sub-heading' | translate }}</span>
+					</div>
+			</div>
+			<div class="create-remote-option btn-options" title="{{ 'CreateOption.createRemote' | translate }}" (click)="createRemoteAccess()" (mouseover)="showwhiteImg = true" (mouseout)="showwhiteImg = false">
+					<img src="{{ showwhiteImg ? './assets/navs/sp-remote-access-hover.png' : './assets/navs/sp-remote_access.png'}}" alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+					<div class="heading-remote">
+							<span>{{ 'CreateOption.remote.heading' | translate }}</span>
+					</div>
+					<div class="sub-heading-remote">
+							<span>{{ 'CreateOption.remote.sub-heading' | translate }}</span>
+					</div>
+			</div>
+	</div>
+</div>

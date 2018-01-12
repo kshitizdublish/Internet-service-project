@@ -1,0 +1,115 @@
+<div class="create-site">
+
+	<!-- Header -->
+	<div class="create-site-header">
+		<span class="heading bold" >{{ 'Create_Site.createHeading' | translate }}</span>
+		<span class="heading ">{{'Create_Site.heading' | translate }}</span>
+		<a class="close-create-site" title="{{'Create_Site.close'| translate}}" (click)="closeSiteForm()">
+			<img src="./assets/navs/cross.png" alt="{{'Create_Site.close'| translate}}">
+		</a>
+	</div>
+
+	<!-- Create a site form -->
+	<div class="row create-site-form">
+		<form [formGroup]='createSiteForm' (ngSubmit)="submitForm(createSiteForm.value, $event)">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<input type="text" [formControl]="createSiteForm.controls['siteName']" required
+						class="form-control input-field-style" autocorrect="off"
+						[ngClass]="{ 'touched': formModal.siteName !== null}"
+						[(ngModel)]="formModal.siteName"
+						autocapitalize="off" spellcheck="off" type="text" maxlength="{{ siteLength }}">
+					<label class="custom-animation-label">{{ 'Create_Site.form.siteName' | translate }}
+						<span class="mandatory">*</span>
+					</label>
+					<span class="separator"></span>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<input type="text" [formControl]="createSiteForm.controls['location']" required
+						class="form-control input-field-style" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search
+						[ngClass]="{ 'touched': formModal.location !== null}"
+						[(ngModel)]="formModal.location">
+						<label class="custom-animation-label">{{ 'Create_Site.form.location' | translate }}
+							<span class="mandatory">*</span>
+						</label>
+						<span class="separator"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<label>{{ 'Create_Site.form.cpeType' | translate }}
+							<span class="mandatory">*</span>
+						</label>
+						<select class="form-control input-field-style" name="state" [formControl]="createSiteForm.controls['cpeType']"
+						 required>
+							<option *ngFor="let csrOption of cpeType" value="{{csrOption.value}}">{{csrOption.label}}</option>
+						</select>
+						<span class="separator"></span>
+					</div>
+					<div class="col-sm-6 form-group">
+						<label>{{ 'Create_Site.form.qosType' | translate }}
+							<span class="mandatory">*</span>
+						</label>
+						<select class="form-control input-field-style"  name="state" [formControl]="createSiteForm.controls['qosType']"
+						 required>
+							<option *ngFor="let wanType of qosType" value="{{wanType.value}}">{{wanType.label}}</option>
+						</select>
+						<span class="separator"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<label>{{ 'Create_Site.form.primaryAccessType' | translate }}</label>
+						<select  class="form-control input-field-style" name="primaryAccessType" [formControl]="createSiteForm.controls['primaryAccessType']">
+							<option *ngFor="let primaryType of primaryAccessType" value="{{primaryType.value}}">{{primaryType.label}}</option>
+						</select>
+						<span class="separator"></span>
+					</div>
+					<div class="col-sm-6 form-group">
+						<label>{{ 'Create_Site.form.primaryAccessNetwork' | translate }}</label>
+						<select  class="form-control input-field-style" name="primaryAccessNetwork" [formControl]="createSiteForm.controls['primaryAccessNetwork']">
+							<option *ngFor="let primaryNetwork of primaryAccessNetwork" value="{{primaryNetwork.value}}">{{primaryNetwork.label}}</option>
+						</select>
+						<span class="separator"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<label>{{ 'Create_Site.form.backUpAccessType' | translate }}</label>
+						<select  class="form-control input-field-style" name="backUpAccessType" [formControl]="createSiteForm.controls['backUpAccessType']">
+							<option *ngFor="let backUpType of backUpAccessType" value="{{backUpType.value}}">{{backUpType.label}}</option>
+						</select>
+						<span class="separator"></span>
+					</div>
+					<div class="col-sm-6 form-group">
+						<label>{{ 'Create_Site.form.backUpAccessNetwork' | translate }}</label>
+						<select  class="form-control input-field-style" name="backUpAccessNetwork" [formControl]="createSiteForm.controls['backUpAccessNetwork']">
+							<option *ngFor="let backUpNetwork of backUpAccessNetwork" value="{{backUpNetwork.value}}">{{backUpNetwork.label}}</option>
+						</select>
+						<span class="separator"></span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>{{ 'Create_Site.form.description' | translate }}</label>
+					<textarea type="text" [formControl]="createSiteForm.controls['description']" placeholder="{{ 'Create_Site.form.descriptionHolder' | translate }}"
+					 class="form-control site-description-area"></textarea>
+				</div>
+				<div class="row button-container">
+					<div class="col-sm-12 form-group create-panel">
+						<button type="submit" class="btn btn-create-site pull-right">
+							{{ 'Create_Site.formBtn.createBtn' | translate }}
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- create site error message display -->
+			<div>
+				<em class="error-text-msg">{{createSiteErrorMsg}}</em>
+			</div>
+		</form>
+	</div>
+
+</div>

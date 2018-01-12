@@ -1,0 +1,122 @@
+@import "../../../common/variables";
+@import "../../../common/common";
+
+.input-field-style {
+    border: none;
+    box-shadow: none;
+    border-bottom: 0.5px solid $dustyGray ;
+    border-radius: 0;
+    font-size: 14px;
+    color: $black;
+    height: 25px;
+    padding: 0;
+    background-color: transparent;
+    font-size: 18px;
+    
+    &:focus + .separator {
+        transform: scaleX(1) translateY(-2px);
+        opacity: 1;
+    }
+}
+
+.separator {
+    height: 2px;
+    width: 100%;
+    background: $tangerine;
+    display: block;
+    transform: scaleX(0) translateY(-2px);
+    transform-origin: 50%;
+    opacity: 0;
+    transition: all .15s linear;
+}
+
+.feed-back-text-area {
+    resize: none;
+    border: 0.5px solid $dustyGray;
+    background: $gallery;
+}
+
+.feed-back-label {
+    font-size: 13px;
+    color: $grayAppx ;
+    font-weight: normal;
+    display: inherit;
+}
+
+.btn-create-site {
+    background-color: $carnation;
+    color: $white;
+    border-radius: 5px;
+    padding: 8px 30px;
+    box-shadow: 0 1px 2px $iron;
+    outline: 0;
+    font-size: 12px;
+}
+
+.btn-create-site:hover {
+    color: $white;
+}
+  
+.nav-bar-props {
+    background-color: $gallery ;
+}
+
+.navbar{
+    border-color: none;
+    position: inherit;
+}
+
+.header-feedback {
+    color: $tundoraFeedBackHeader;
+    font-size: 32px;
+    padding-left: 7%;
+    padding-top: 2%;
+    border-bottom: 1px solid $alto ;
+}
+
+.side-nav-text {
+    margin-left: 77px;
+    margin-top: 36px;
+    color: $tundoraFeedback;
+    font-style: italic;
+}
+
+.row-padding {
+    margin: 0;
+}
+
+.form-control:focus {
+    border-color: none; 
+    outline: 0; 
+    box-shadow:none;; 
+}
+
+agm-map {
+      height: 221px;
+      width: 428px;
+}
+
+.address-email-props {
+    color: $tundoraFeedback;
+    font-size: 16px;
+}
+
+.address-block-props {
+     @extend .address-email-props;
+     font-weight: 600;
+}
+
+.address-phone-padding {
+    padding-top: 15px;
+}
+
+.padding-feedback-row {
+    padding-top: 2.3%;
+    border-left: 1px solid $altoLeftBorder;
+}
+
+.icon-left-margin {
+    margin-left: 10px;
+}
+
+        

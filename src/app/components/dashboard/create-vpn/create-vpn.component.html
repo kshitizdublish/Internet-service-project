@@ -1,0 +1,134 @@
+<div class="create-vpn-container">
+   <div class="row">
+      <div class="create-vpn-text">
+          <span class="caption-primary">{{ 'CreateVpnPanel.createLabel' | translate}}</span>
+          <span class="caption-secondary">{{ 'CreateVpnPanel.vpn' | translate}}</span>
+      </div>
+      <div class="vpn-close-icon">
+          <a href="javascript:void(0)" title="{{ 'CreateVpnPanel.altClose' | translate}}"
+              (click)="closeVPNForm()">
+            <img src="./assets/navs/close.png" alt="{{ 'CreateVpnPanel.altClose' | translate}}">
+          </a>	
+      </div>
+    </div>
+    
+    <div class="create-vpn-form">
+      <form [formGroup]='createVpnForm' (ngSubmit)="submitCreateVpnForm(createVpnForm.value, $event)">
+          <label>
+              <span class="mandatory">*</span>
+         </label>
+          <label class="create-vpn-text-label">{{ 'CreateVpnPanel.vpnName' | translate}}</label>
+          <div class="form-group">
+              <input type="text" class="form-control input-style"
+                required [(ngModel)]="vpnName" 
+                formControlName="vpnName">
+		 </div>
+         <div>
+             <div class="form-group layer-type layer-type-lay">
+                    <label class="topology-label" for="input-type">{{ 'CreateVpnPanel.selectLayer' | translate}}</label>
+                    <div class="row radio-type">
+                        <div class="radio-container radio-left">
+                            <input type="radio" class="custom-radio" id="layertwo" name="layer" formControlName="layer" value="l2" [(ngModel)]='layer'/>
+                            <label class="custom-label"></label><div class="label-name"><label class="layerl" for="layertwo">{{ 'CreateVpnPanel.l2' | translate}}</label></div>
+                        </div>
+                         <div class="radio-container radio-right">
+                            <input type="radio" class="custom-radio" id="layerthree" name="layer" formControlName="layer" value="l3" [(ngModel)]='layer'/>
+                            <label class="custom-label"></label><div class="label-name"><label class="layerl" for="layerthree">{{ 'CreateVpnPanel.l3' | translate}}</label></div>
+                        </div>
+                    </div>
+             </div>
+             <div class="form-group layer-type layer-type-topology">
+                <label class="topology-label" for="input-type">{{ 'CreateVpnPanel.selectTopology' | translate }}</label>
+                <div class="row radio-type">
+                        <div class="radio-container radio-left">
+                            <input type="radio" id="fullmesh"
+                                 name="topology" [(ngModel)]="topology"
+                                 (change)="selectTopology('full_mesh')"
+                                 formControlName="topology"
+                                 value="full_mesh"
+                                 [checked]="fullmesh" class="custom-radio"/>
+                            <label class="custom-label"></label>
+                            <div class="label-name">
+                                <label class="fullmesh-text" for="fullmesh">{{ 'CreateVpnPanel.fullMesh' | translate }}</label>
+                            </div>
+                        </div>
+                        <div class="radio-container radio-right">
+                            <input type="radio" id="hubspoke"
+                                name="topology"
+                                [(ngModel)]="topology"
+                                (change)="selectTopology('hub_spoke')"
+                                formControlName="topology" value="hub_spoke"  class="custom-radio"/>
+                            <label class="custom-label"></label>
+                            <div class="label-name">
+                                <label class="hubspoke-text" for="hubspoke">{{ 'CreateVpnPanel.hubSpoke' | translate }}</label>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+         </div>
+         
+
+          <div class="full-mesh">
+            <label class="selected-class-label">{{ selectedLocationList.length }} {{ 'CreateVpnPanel.selectedSites' | translate}}</label>
+            <div class="site-checkbox-container-fullmesh"> 
+                <div class="form-group">
+                    <div class="row row-vpn" *ngFor="let item of locationList;let i=index;">
+                        <div class="checkbox-container checkbox-left">
+                            <input
+                                #chkBox
+                                id="{{'Idc'+i}}"
+                                type="checkbox"
+                                class="custom-checkbox"
+                                (click)="onSelectSiteItem(item, chkBox)"
+                                [checked]="item.selected"/>
+                            <label class="custom-label"></label>  
+                        </div>
+                        <div class="checkbox-label-container">
+                            <span class="check-text-location"><label class="layerl" for="{{'Idc'+i}}">{{ item.location }}</label></span>
+                            <span class="check-text-Name"><label class="layerl" for="{{'Idc'+i}}"> {{ item.name }}</label></span>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+         </div>
+
+         <div class="hub-spoke" *ngIf="hubspoke">
+            <label class="selected-class-label-hub">{{ 'CreateVpnPanel.selectHub' | translate }}</label>
+            <div class="site-checkbox-container"> 
+                <div class="form-group">
+                    <div class="row row-vpn" *ngFor="let item of selectedLocationList;let i = index;">
+                    <div class="radio-container hub-radio">
+                        <input
+                            #radioBox
+                            id="{{'Id'+i}}"
+                            type="radio"
+                            class="custom-radio"
+                            (click)="onSelectRadioitem(item, radioBox)"
+                            [checked]="item.radioSelected"/>
+                        <label class="custom-label"></label>
+                        <div class="label-name-radio custom-radio-label">
+                            <span class="radio-text-location"><label class="layerl" for="{{'Id'+i}}">{{ item.location }}</label></span>
+                            <span class="radio-text-name"><label class="layerl" for="{{'Id'+i}}"> {{ item.name }}</label></span>
+                        </div>
+                    </div>
+                    </div>   
+                </div>
+            </div>
+            </div>
+
+          <div class="vpn-textarea">
+              <div class="form-group">
+                  <label class="vpn-textarea-desc" for="description">{{ 'CreateVpnPanel.description' | translate}}:</label>
+                  <textarea class="form-control" formControlName="vpnDesc"
+                   rows="5" id="description"></textarea>
+              </div>
+          </div>
+          <div class="submit-form text-right">
+              <button type="submit" class="create-vpn">{{ 'CreateVpnPanel.createButton' | translate}}</button>
+          </div>
+          <div>
+              <em class="error-text-msg">{{createSiteErrorMsg}}</em>
+         </div>
+      </form>
+    </div>
+</div>

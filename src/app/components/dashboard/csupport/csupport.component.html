@@ -1,0 +1,7 @@
+<div class="customer-support">
+  <app-header [ngClass]="{ 'customer-active': true }" [showClientListPanelAttr]="false" [showLocationSearch]="false"></app-header>
+  <app-user-profile *ngIf="showProfileMenu"></app-user-profile>
+  <div class="customer-support-container">
+    <app-support-page></app-support-page>
+  </div>
+</div>

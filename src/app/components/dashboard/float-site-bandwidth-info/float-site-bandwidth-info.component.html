@@ -1,0 +1,68 @@
+<div class="site-bandwidth-info">
+	<div class="bandwidth-container">
+		<div class="bandwidth-header">
+			<div class="bandwidth-header-title col-sm-12">
+				<div>{{ 'SiteBandwidthInfo.headerTitle' | translate}}</div>
+			</div>
+		</div>
+		<!-- TODO for later use -->
+		<!-- <div class="select-date-range datetime-popup col-sm-8">
+			<div class="from-date-lable">{{ 'SiteBandwidthInfo.bandwidthFrom' | translate}}</div>
+			<div class="from-date-icon">
+				<input class="form-control" type="hidden" [(ngModel)]="fromDate" />
+				<div class="btn" (click)="onTogglePicker('fromDate')">
+					<i class="fa fa-calendar" aria-hidden="true"></i>
+					{{fromDate | date: 'MMM d, y'}}
+				</div>
+				<datetime-popup class="datetime-popup" [value]="fromDate" [maxDate]="maxDate" (valueChange)="onFromDateChange($event)" [(showPopup)]="fromDateShowPicker"
+				 [showDate]="showDate" [showTime]="showTime" [closeButton]="closeButton" class="datetimePickerPopup"></datetime-popup>
+
+			</div>
+			<div class="to-date-lable">{{ 'SiteBandwidthInfo.bandwidthTo' | translate}}</div>
+			<div class="to-date-icon">
+				<input class="form-control" type="hidden" [(ngModel)]="toDate" />
+				<div class="btn" (click)="onTogglePicker('toDate')">
+					<i class="fa fa-calendar" aria-hidden="true"></i>
+					{{toDate | date: 'MMM d, y'}}
+				</div>
+				<datetime-popup [value]="toDate" [minDate]="minDate" [maxDate]="maxDate" (valueChange)="onToDateChange($event)" [(showPopup)]="toDateShowPicker"
+				 [showDate]="showDate" [showTime]="showTime" [closeButton]="closeButton" class="datetimePickerPopup"></datetime-popup>
+
+			</div>
+		</div> -->
+		<div class="bandwidth-body">
+			<div class="aggregate-bandwidth">
+				<div class="bandwidth-info col-sm-12">
+					<div class="aggregate-lable">{{ 'SiteBandwidthInfo.agg-throughput' | translate}}</div>
+					<div class="bandwidth-progress">
+						<img src="./assets/icons/graph.png" alt="{{ 'Create_Site.buildingIcon' | translate}}">
+					</div>
+					<div class="bandwidth-percent">{{ aggregateBandwidth }} %</div>
+				</div>
+			</div>
+			<div class="date-range-filter">
+				<button name="today" class="today-range">{{ 'SiteBandwidthInfo.date-today' | translate}}</button>
+				<button name="last-weak" class="lastweek-range">{{ 'SiteBandwidthInfo.date-lastweek' | translate}}</button>
+				<button name="last-month" class="lastmonth-range">{{ 'SiteBandwidthInfo.date-lastmonth' | translate}}</button>
+				<button name="daterange" class="date-range">{{ 'SiteBandwidthInfo.date-range' | translate}}</button>
+			</div>
+			<div class="bandwidth-chart col-sm-12">
+				<app-site-bandwidth-chart></app-site-bandwidth-chart>
+			</div>
+			<div class="bandwidth-stream col-sm-12">
+				<div class="inbound">
+					<i class="fa fa-circle fa-lg inbound-circle"></i>
+					<span class="bound-option">{{ 'SiteBandwidthInfo.inbound' | translate}}</span>
+				</div>
+				<div class="outbound">
+					<i class="fa fa-circle fa-lg outbound-circle"></i>
+					<span class="bound-option">{{ 'SiteBandwidthInfo.outbound' | translate}}</span>
+				</div>
+				<div class="average">
+					<i class="fa fa-circle fa-lg avg-circle"></i>
+					<span class="bound-option">{{ 'SiteBandwidthInfo.average' | translate}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,100 @@
+<div class="site-info-page">
+	<!-- Location Site -->
+	<div class="right-panel">
+		<div class="location-header">
+			<div class="location-panel">
+				<div class="location-heading">
+					<select class="form-control site-name-option fa-angle-down" (change)="onChangeSiteLocation($event.target.value)">
+						<option *ngFor="let siteObj of sitesNames" value="{{ siteObj.id }}" selected="{{ siteObj.selected }}">{{siteObj.name}}</option>
+					</select>
+				</div>
+				<div class="header-col-sep"></div>
+				<div class="location">
+					<div class="location-label">{{ 'Create_Site.form.location' | translate }}</div>
+					<div class="location-value">{{ selectedLocation }}</div>
+				</div>
+				<div class="header-col-sep"></div>
+				<div class="csr-type">
+						<div class="csrtype-label">{{ 'Create_Site.form.csrType' | translate }}</div>
+						<div class="csrtype-value">{{ selectedCSRType }}</div>
+				</div>
+				<div class="close-icon">
+					<div class="location-panel-close-icon" (click)="closeSiteInfoPanel()">
+							<img src="./assets/navs/close.png" alt="{{ 'Create_Site.buildingIcon' | translate}}">
+					</div>
+				</div>
+			</div>
+			<!-- <div *ngIf="currentUser.hasCreateSite" class="create-site-panel" (click)="showSiteForm(false)">
+				<div class="create-site-icon">
+					<img src="./assets/navs/add_button.png" alt="{{ 'SiteInfoPage.createSite' | translate}}">
+				</div>
+				<div class="create-site-text">
+					<a>
+						{{ 'SiteInfoPage.createSite' | translate }}
+					</a>
+				</div>
+			</div> -->
+			<!-- <div class="site-options-panel">
+				<button class="btn btn-primary site-options-dropdown" type="button" data-toggle="dropdown">
+					<img src="./assets/navs/menu.png" alt="modify site">
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="javascript:void(0)">{{ 'SiteInfoPage.dropDown.option1' | translate }}</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" (click)="showSiteForm(true)">{{ 'SiteInfoPage.dropDown.option2' | translate }}</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" (click)="showRemoveSiteForm()">
+							{{ 'SiteInfoPage.dropDown.option3' | translate }}
+						</a>
+					</li>
+				</ul>
+			</div> -->
+		</div>
+		<div class="location-body">
+			<div class="location-left-panel">
+				<div class="update-services">
+					<!-- <p class="update-services-heading">{{ 'SiteInfoPage.services.heading' | translate }}</p> -->
+					<div class="services-panel row">
+						<div class="service-panel-tab">
+							<div class="col-md-4" [ngClass]="{ 'active': (tabSelectCount == 1) ? true : false }" (click)="showNetwork(); tabSelectCount = 1">
+								<img src="{{( tabSelectCount == 1) ? './assets/navs/network_active.png' : './assets/navs/network.png'}}" alt="{{ 'SiteInfoPage.services.network' | translate }}"
+								/>
+								<p class="service-name">{{ 'SiteInfoPage.services.network' | translate }}</p>
+							</div>
+							<div class="col-md-4" [ngClass]="{ 'active': (tabSelectCount == 2) ? true : false }" (click)="showSecurity(); tabSelectCount = 2">
+								<img src="{{ (tabSelectCount == 2) ? './assets/navs/image-type.png' : './assets/navs/image-type-hover.png'}}" alt="{{ 'SiteInfoPage.services.security' | translate }}"
+								/>
+								<p class="service-name">{{ 'SiteInfoPage.services.security' | translate }}</p>
+							</div>
+							<div class="col-md-4" [ngClass]="{ 'active': (tabSelectCount == 3) ? true : false }" (click)="showConnectivity(); tabSelectCount = 3">
+								<img src="{{ (tabSelectCount == 3) ? './assets/navs/site_detail_active.png' : './assets/navs/site_detail.png'}}" alt="{{ 'SiteInfoPage.services.connectivity' | translate }}"
+								/>
+								<p class="service-name">{{ 'SiteInfoPage.services.connectivity' | translate }}</p>
+							</div>
+						</div>
+					</div>
+					<hr class="service-panel-hr">
+
+					<!-- switch service components based on active service -->
+					<app-network-services *ngIf="showNetworkServices" [networkObj]="networkObject">
+					</app-network-services>
+
+					<app-security-services *ngIf="showSecurityServices">
+					</app-security-services>
+
+					<app-connectivity-services *ngIf="showConnectivityServices" [connectivityObj]="connectivityObject" [selectedSiteObj]="selectedSiteObj">
+					</app-connectivity-services>
+
+				</div>
+			</div>
+			<div class="location-right-panel">
+				<!-- site bandh width info -->
+				<app-float-site-bandwidth-info class="site-bandwidth-info-panel">
+				</app-float-site-bandwidth-info>
+			</div>
+		</div>
+	</div>
+</div>

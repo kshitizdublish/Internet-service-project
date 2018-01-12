@@ -1,0 +1,12 @@
+@import "../../../common/variables";
+@import "../../../common/common";
+
+.vpn-name-label {
+	color: $grayAppx;
+	font-size: 13px;
+}
+
+.vpn-name-value {
+	font-size: 18px;
+	color: $silverRemoteAccess;
+}

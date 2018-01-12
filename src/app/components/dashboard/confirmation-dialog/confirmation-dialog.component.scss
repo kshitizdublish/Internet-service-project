@@ -1,0 +1,65 @@
+@import "../../../common/variables";
+
+.confirmation-dialog-popup {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0%;
+    z-index: 999999999;
+}
+
+.confirmation-dialog {
+    position: absolute;
+    top: 27%;
+    left: 37%;
+    width: 373px;
+    text-align: center;
+    z-index: 9999999;
+    background-color: $white;
+    border-radius: 10px;
+}
+
+.confirmation-header {
+    border-bottom: none;
+    padding: 18px;
+}
+
+.confirmation-title {
+    color: $osloGray;
+    font-size: 18px;
+}
+
+.confirmation-body {
+    height: 180px;
+    font-size: 14px;
+    color: $tundora;
+    padding: 0 8px;
+    img {
+        padding-bottom: 30px;
+    }
+}
+
+.confirmation-footer {
+    border-top: none;
+    text-align: center;
+    padding: 10px 20px 30px 20px;
+}
+
+.cancel-btn, .proceed-btn {
+    width: 148px;
+    height: 41px;
+    border-radius: 20px;
+    background-color: $tangerine;
+    color: $white;
+    padding: 8px 30px;
+    box-shadow: 0px 1px 2px $iron;
+    outline: 0;
+    &:hover:focus:active {
+        outline: 0;
+        box-shadow: 0px 1px 2px $iron;
+    }
+    &:hover {
+        color: $white;
+    }
+}

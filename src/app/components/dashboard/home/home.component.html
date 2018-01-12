@@ -1,0 +1,126 @@
+<div [ngClass]="{ 'home-panel': !isCustomerSelected }">
+
+	<agm-map #agm [latitude]="lat" [longitude]="lng" [fitBounds]="bounds" [zoomControlOptions]="" [streetViewControlOptions]=""
+	 [streetViewControl]="false" (mapReady)="makeIconsAndBound()" [styles]="stylez" (mapClick)="onMapClicked()" [mapTypeControlOptions]="">
+
+		<agm-marker *ngFor="let marker of cordins" [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="marker.Icon"
+		 (markerClick)="onMarkerClick(marker)" (mouseOver)="onMarkerOver(marker)">
+
+			<agm-snazzy-info-window #infoPanel maxWidth="200px" [isOpen]="marker.isOpen" [closeWhenOthersOpen]="true" [showCloseButton]="false"
+			 backgroundColor="#2b2b2b" [border]="false">
+				<ng-template>
+					<app-info [markerObj]="marker"></app-info>
+				</ng-template>
+			</agm-snazzy-info-window>
+
+		</agm-marker>
+
+		<agm-polyline *ngFor="let poly of pointersCopy" [strokeColor]="poly.color" [strokeWeight]="3" [geodesic]="false">
+			<ng-container *ngFor="let pLine of poly.latlong">
+				<agm-polyline-point [latitude]="pLine.latitude" [longitude]="pLine.longitude">
+				</agm-polyline-point>
+			</ng-container>
+		</agm-polyline>
+
+	</agm-map>
+
+	<app-header [ngClass]="{ 'customer-active': !isCustomerSelected }" [showClientListPanelAttr]="true"></app-header>
+	<app-user-profile *ngIf="showProfileMenu"></app-user-profile>
+
+	<!-- Toggle map -->
+	<div class="show-hide-map" [ngClass]="{ 'customer-active': !isCustomerSelected }">
+		<div class="row">
+			<div class="show-map">
+				<a href="javascript:void(0)" (click)="toogleWhiteMapView(false)">
+					<img src="./assets/navs/show-map-white.png" alt="{{ 'ToogleMap.showMap' | translate}}" class="show-map-image">
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="hide-map">
+				<a href="javascript:void(0)" (click)="toogleWhiteMapView(true)">
+					<img src="./assets/navs/hide_map.png" alt="{{ 'ToogleMap.hideMap' | translate}}" class="hide-map-image">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Information about Site -->
+	<app-float-site-info [siteInfo]="siteInfo" (topologyData)="getAllTopologyData($event)" class="location-quick-info" [ngClass]="{ 'customer-active': !isCustomerSelected }">
+	</app-float-site-info>
+
+	<!-- Create/Edit Site Panel -->
+	<app-create-site class="create-site" [ngClass]="{ 'create-site__show': showCreateSiteForm }">
+	</app-create-site>
+
+	<!-- Create/Edit Acl Panel -->
+	<app-create-acl class="create-acl" [aclFormElements]="aclFormElements" [ngClass]="{ 'create-site__show': showCreateAclForm }">
+	</app-create-acl>
+
+	<!-- Count of Sites and other -->
+	<app-site-info-panel [SelectedLocationId]="selectedMarkerId" [ngClass]="{ 'location-info-panel__show': isClickedMarker }"
+	 class="location-info-panel">
+	</app-site-info-panel>
+
+	<!-- Set QOS Parameters Panel -->
+	<app-qos-set-panel [ngClass]="{ 'qos-set-panel__show': setQoSParam }" class="qos-set-panel">
+	</app-qos-set-panel>
+
+	<!-- VPN Configuration Panel -->
+	<app-vpn-config class="config-vpn" [ngClass]="{ 'config-vpn__show': showConfigPanel }">
+	</app-vpn-config>
+
+	<!-- Remove Site Panel -->
+	<app-remove-site class="remove-site" [ngClass]="{ 'remove-site__show': showRemoveSiteForm }">
+	</app-remove-site>
+
+	<div class="float-panel" [ngClass]="{ 'customer-active': !isCustomerSelected }">
+		<div class="main-container">
+			<div class="col-md-4 col-sm-4 box-border-right">
+				<div class="display-box">
+					<div class="circle-green"></div>
+					<span class="display-box-labels">{{ 'InfoPanel.siteOnline' | translate }}</span>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 box-border-right">
+				<div class="display-box">
+					<div class="circle-red"></div>
+					<span class="display-box-labels"> {{ 'InfoPanel.siteOffline' | translate }} </span>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="display-box">
+					<div class="circle-gray"></div>
+					<span class="display-box-labels"> {{ 'InfoPanel.siteInactive' | translate }} </span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- gray over while showing map panel -->
+	<div (click)="onMapClicked()" [ngClass]="{ 'overlay-shade' : showOverlay}"></div>
+	<div [ngClass]="{ 'overlay-shade-double' : overlayWhileDouble}"></div>
+	<app-add-service-panel class="add-service" [ngClass]="{ 'customer-active': !isCustomerSelected }">
+	</app-add-service-panel>
+
+</div>
+<app-customer class="customer" [ngClass]="{ 'customer-hide': isCustomerSelected }"></app-customer>
+
+<!-- Create Internet Access -->
+<app-create-internet-access class="create-internet-access" [ddosDeployment]="ddosDeployment" [ngClass]="{ 'create-internet-access__show': isShowInternetAccessForm }">
+</app-create-internet-access>
+
+<!-- Create Remote access -->
+<app-remote-access class="remote-access-panel" [ngClass]="{ 'create-remote-access__show': showRemoteAccessForm }">
+</app-remote-access>
+
+<!-- Create WiFI access -->
+<app-create-wifi class="create-wifi-panel"
+	[ngClass]="{ 'create-wifi__show': showWifiForm }">
+</app-create-wifi>
+
+<!-- Create VPN -->
+<app-create-vpn 
+	class="vpn"
+	[ngClass]="{ 'vpn__show': showCreateVpnForm }">
+</app-create-vpn>

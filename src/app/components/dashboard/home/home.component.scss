@@ -1,0 +1,299 @@
+@import "../../../common/variables";
+
+.home-panel{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(17px);
+  background-color: $grey;
+}
+
+agm-map {
+  height: 100vh;
+  width: 100%;
+}
+
+.location-info-panel {
+  position: absolute;
+  z-index: 99999;
+  right: 0;
+  top: 0;
+  width: 1030px;
+  height: 100%;
+  background: $white;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 3px $darkGray;
+
+}
+
+.location-info-panel__show {
+  transform: translateX(0);
+}
+
+.location-quick-info {
+  position: absolute;
+  top: 18%;
+  left: 7%;
+}
+
+.float-panel {
+  width: 330px;
+  position: absolute;
+  right: 460px;
+  bottom: 50px;
+  background-color: $tundoraFloat;
+  border-radius: 4px;
+  border: 1px solid $tundoraFloat;
+  padding: 8px;
+  font-size: 11px;
+  text-align: left;
+  height: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: 0 2px 2px $tundoraFloat;
+}
+
+.display-box {
+  display: -webkit-box;
+  padding-bottom: 5px;
+  padding-top: 6px;
+}
+
+.display-box-labels {
+  color: $mercury;
+  font-size: 12px;
+}
+
+.float-panel-wifi {
+  margin-right: 3px;
+  margin-left: -2px;
+}
+
+.float-panel-vpn {
+  margin-right: 3px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  margin-right: 7px;
+  margin-top: 2px;
+}
+
+.circle-red {
+  @extend .circle;
+  background-color: $red;
+}
+
+.circle-green {
+  @extend .circle;
+  background-color: $green;
+}
+
+.circle-gray {
+  @extend .circle;
+  background-color: $grey;
+}
+
+.box-border-right{
+  border-right: 1px solid $scorpion;
+}
+
+//common css style for forms
+.create-site,
+.create-acl,
+.config-vpn,
+.create-internet-access,
+.remote-access-panel,
+.create-wifi-panel {
+  top: 0;
+  position: fixed;
+  z-index: 99999;
+  right: -50%;
+  width: 481px;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 20px;
+  padding-right: 30px;
+  background: $white;
+  transition: all 0.50s ease-in-out;
+  opacity: 0;
+  box-shadow: 0 3px 20px $black;
+  overflow-y: overlay;
+}
+
+
+.create-site {
+  width: 36%;
+  padding-left: 37px;
+  padding-right: 39px;
+}
+
+.create-acl {
+  z-index: 999999;
+  width: 36%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.create-internet-access {
+  padding: 0;
+}
+
+.vpn {
+  top: 0;
+  position: fixed;
+  z-index: 99999;
+  right: -50%;
+  /* width: 30%; */
+  /* height: 100%; */
+  overflow-y: auto;
+  /* padding-left: 20px; */
+  /* padding-right: 30px; */
+  background: $white;
+  transition: all 0.50s ease-in-out;
+  opacity: 0;
+  box-shadow: 0 3px 20px $black;
+}
+
+.remote-access-panel {
+  padding: 0;
+  width: 28.7%;
+}
+
+.create-site__show,
+.create-acl__show
+.config-vpn__show,
+.create-internet-access__show,
+.create-remote-access__show,
+.create-wifi__show,
+.vpn__show {
+  opacity: 1;
+  right: 0%;
+}
+
+.qos-set-panel {
+  top: 46px;
+  position: absolute;
+  right: -30%;
+  width: 25%;
+  height: 93%;
+  border: 1px solid $darkGray;
+  background: $white;
+  transition: all 0.50s ease-in-out;
+  opacity: 0;
+  box-shadow: 0 0 3px $darkGray;
+}
+
+.qos-set-panel__show {
+  opacity: 1;
+  right: 28%;
+}
+
+.overlay-shade {
+  background-color: $emperorAddServicePanel;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.overlay-shade-double {
+  @extend .overlay-shade;
+  z-index: 99999;
+}
+
+.remove-site {
+  top: 46px;
+  position: absolute;
+  right: -30%;
+  width: 25%;
+  height: 93%;
+  border: 1px solid $darkGray;
+  background: $white;
+  transition: all 0.50s ease-in-out;
+  opacity: 0;
+}
+
+.remove-site__show {
+  opacity: 1;
+  right: 382px;
+}
+
+
+.customer {
+  position: absolute;
+  /*top: 0;
+  left: 0;*/
+  height: 100%;
+  width: 100%;
+  background-color: rgba(240, 248, 255, .5);
+  z-index: 9999999;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  /*display: none;*/
+}
+.customer-hide {
+  transform: translateY(-200%);
+}
+.vpn-props {
+  width:14px;
+  height:3px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 8px;
+}
+
+.vpn-unreach-line {
+  @extend .vpn-props;
+  background: $redOrange;
+}
+
+.vpn-reach-line {
+  @extend .vpn-props;
+  background: $vidaLoca;
+}
+
+.show-hide-map {
+  position: absolute;
+  top: 23%;
+  right: 3%;
+  border-radius: 15px;
+
+  .show-map {
+    background: $doveGrey;
+    height: 37px;
+    width: 34px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .hide-map {
+    background: $white;
+    height: 37px;
+    width: 34px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .show-map-image {
+    padding: 10px;
+  }
+
+  .hide-map-image {
+    padding: 8px;
+  }
+}
+
+.add-service {
+  position: absolute;
+  top: 0;
+}
+
+.customer-active {
+  display: none;
+}

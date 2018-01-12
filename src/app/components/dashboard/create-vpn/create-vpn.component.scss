@@ -1,0 +1,354 @@
+@import "../../../common/variables";
+
+.create-vpn-container {
+    label {
+        max-width: 100%;
+        margin-bottom: 0;
+        font-weight: normal;
+    }
+    overflow: visible;
+    width: 483px;
+    height: 100vh;
+    padding: 0 52px 0;
+    background: $alabaster;
+
+    .form-group {
+        position: relative;
+    }
+
+    .create-vpn-text {
+        padding: 0 0 30px 0;
+        margin-top: 40px;
+        width: 149px;
+        height: 38px;
+        margin-left: 18px;
+        float: left;
+        box-sizing: border-box;
+        .caption-primary {
+            color: $tundoraInternet;;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .caption-secondary {
+            color: $grayAppx;
+            font-size: 28px;
+        }
+    }
+    .vpn-close-icon {
+        margin-top: 31px;
+        margin-right: 25px;
+        float: right;
+    }
+    .create-vpn-form {
+        margin-top: 10px; 
+        .selected-class-label{
+            font-size: 13px;
+            font-weight: normal;
+            color: $grayAppx;
+        }
+        .layer-type {
+            float: left;
+            .topology-label {
+                font-size: 13px;
+                position: initial;
+                font-weight: normal;
+                color: $grayAppx;
+                margin-bottom: 10px;
+            }
+            .radio-type {
+                margin-left: 0px;
+                .topology-radio {
+                    font-size: 18PX;
+                    position: initial;
+                    color: $black;
+                }
+            }   
+        }
+        .layer-type-lay{
+            width: 109px;
+        }
+        .layer-type-topology{
+            margin-left: 40px;
+        }
+    }
+
+    .vpn-textarea textarea.form-control {
+        width: 100%;
+        height: 45px;
+        background: transparent;
+        border-radius: 4px;
+        font-size: 18px;
+        padding: 4px 12px;
+        margin-top: 0;
+        resize: none;
+        & ~ label {
+            bottom: 106px;
+        }
+    }
+    .vpn-textarea-desc {
+        font-size: 13px;
+        position: initial;
+        margin-bottom: 10px;
+    }
+    .create-vpn {
+        width: 128px;
+        height: 42.74px;
+        background:  $carnation;
+        border-radius: 4px;
+        border: 1px solid $carnation;
+        color: $white;
+        font-size: 12px;
+        margin-right: 0;
+        float: right;
+    }
+    .site-checkbox-container {
+        margin-top: 5px;
+        height: 80px;
+        padding-left: 15px;
+        width: 388px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-top: 1px solid #DADADA;
+        .row-vpn {
+            height: 36px;
+            border-bottom: 1px solid $mercury ;
+            box-sizing: border-box;
+            padding-top: 10px;
+            background-color: $vpnCheckBoxBg;
+        }
+        .vpn-site {
+            display: block;
+            padding-left: 15px;
+            font-size: 14px;
+            position: initial;
+            .site-checkbox {
+                width: 13px;
+                height: 13px;
+                padding: 0;
+                margin:0;
+                vertical-align: bottom;
+                position: relative;
+                top: 4px;
+                font-size: 14px;
+                float: left;     
+            }
+            .textLocation, .textName {
+                width: 48%;
+                display: block;
+                float: left;
+                padding-left: 15px;
+                font-weight: normal;
+                color: $vpnCheckBoxLbl;
+            }
+
+        }
+    }
+    // .full-mesh, .hub-spoke{
+    //     /*height: 342px;*/
+    // }
+    .site-checkbox-container-fullmesh{
+        height: 140px;
+        padding-left: 15px;
+        width: 388px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+        overflow-x: hidden;
+        margin-top: 7px;
+        border-top: 1px solid #DADADA;
+        border-bottom: 1px solid #DADADA;
+        .row-vpn {
+            height: 36px;
+            border-bottom: 1px solid $mercury ;
+            box-sizing: border-box;
+            padding-top: 10px;
+            background-color: $vpnCheckBoxBg;
+        }
+        .vpn-site {
+            display: block;
+            padding-left: 15px;
+            font-size: 14px;
+            position: initial;
+            .site-checkbox {
+                width: 13px;
+                height: 13px;
+                padding: 0;
+                margin:0;
+                vertical-align: bottom;
+                position: relative;
+                top: 4px;
+                font-size: 14px;
+                float: left;     
+            }
+            .textLocation, .textName {
+                width: 48%;
+                display: block;
+                float: left;
+                padding-left: 15px;
+                font-weight: normal;
+                color: $vpnCheckBoxLbl;
+            }
+
+        }
+    }
+}
+.input-panel{
+    margin-bottom: 16px;
+}
+.input-style {
+    border: none;
+    border-bottom: 0.5px $dustyGray;
+    height: 24px;
+    color: $black;
+    font-size: 18px;
+    position: relative;
+    padding: 0;
+    z-index: 5;
+
+    &.form-control {
+        background: none;
+        border: none;
+        border-radius: initial;
+        border-bottom: 0.5px solid $dustyGray;
+        box-shadow: none;
+    }
+    &.form-control.touched ~ label,
+    &.form-control:focus ~ label {
+        bottom: 22px;
+    }
+    &.form-control:focus::placeholder {
+        opacity: 1;
+    }
+
+}
+.selected-class-label-hub{
+     font-size: 13px;
+    font-weight: normal;
+    color: $grayAppx;
+    margin-bottom: 10px;
+}
+.error-text-msg {
+    padding: 2px 15px 15px 15px;
+    font-size: 11px;
+    color: $red;
+}
+
+.create-vpn-text-label {
+    font-size: 13px;
+    color: $grayAppx;
+    margin-bottom: 0px;
+    font-weight: normal;
+}
+.checkbox-left {
+    width: 20px;
+    float: left;
+    margin-left: 5px;
+}
+.check-text-Name, .check-text-location{
+    margin-left: 12px;
+    width: 42%;
+    display: block;
+    float: left;
+}
+.radio-left{
+    float:left;
+}
+.radio-right {
+    float:left;
+    margin-left: 20px;
+}
+.hub-radio {
+    margin-left: 6px;
+}
+.radio-text-location {
+    width: 47%;
+    float: left;
+    display: block;
+}
+.radio-text-name {
+    width: 38%;
+    display: block;
+    float: left;
+}
+
+/* 
+* Css checkbox / radio
+*/
+.radio-container,
+.checkbox-container {
+  position: relative;
+}
+
+.custom-checkbox,
+.custom-radio {
+  opacity: 0;
+  position: relative;
+  z-index: 6;
+}
+.custom-checkbox + .custom-label {
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    width: 14.93px;
+    height: 14.93px;
+    background: #fff;
+    border: 0.5px solid #7a7a7a;
+    border-radius: 2px;
+    left: 2px;
+    margin-top: 2px;
+    z-index: 5;
+}
+.custom-checkbox:checked + .custom-label {
+  border: 0.5px solid #ff7904;
+  background: #ff7904;
+}
+.custom-checkbox:checked + .custom-label:after {
+  position: absolute;
+  content: "";
+  width: 6.53px;
+  height: 3px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  margin: 4px 0 0 3px;
+  transform: rotate(-45deg);  
+}
+
+/* Radio */
+.custom-radio + .custom-label {
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 1px solid #535353;
+    border-radius: 50%;
+    left: 2px;
+    z-index: 5;
+}
+
+.custom-radio:checked + .custom-label:after {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #ff7904;
+  border-radius: 50%;
+  z-index: 5;
+  margin: 3px 0 0 3px;
+}
+
+.label-name {
+    margin-top: -27px;
+    margin-left: 25px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.label-name-radio {
+    margin-top: -25px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.fullmesh-text, .hubspoke-text, .layerl {
+    cursor: pointer;
+}
+

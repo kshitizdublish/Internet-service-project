@@ -1,0 +1,60 @@
+<div class="app-side-nav">
+	<!-- addProvision -->
+	<div class="service-list">
+
+		<a href="javascript:void(0)" class="close-left-panel"
+			title="{{ 'AppLeftPanel.iconTitle.close' | translate}}" (click)="closeLeftPanel()">
+			<div aria-hidden="true">
+				<img src="./assets/navs/close_left_panel.png"
+					alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+			</div>
+		</a>
+
+		<a href="javascript:void(0)" [routerLink]="['/dashboard/home']" class="panel-item"
+			(click)="selectedTab = 0"
+			title="{{ 'AppLeftPanel.iconTitle.close' | translate}}"
+			(click)="selectCurrentItem(0); openDashBoard()"
+			[ngClass]="{'active': selectedTab === 0}">
+			<div aria-hidden="true">
+				<img src="{{ (selectedTab === 0) ? './assets/navs/customer-portal-active.png' : './assets/navs/customer-portal-inactive.png'}}"
+					alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+				<span class="title">{{ 'SideNav.customerPortal' | translate }}</span>
+			</div>
+		</a>
+
+	</div>
+
+	<!-- Setting profile -->
+	<div class="user-setting">
+		<a href="javascript:void(0)" [routerLink]="['/dashboard/csupport']" title="{{ 'AppLeftPanel.iconTitle.user' | translate}}"
+		(click)="selectCurrentItem(1)"
+		[ngClass]="{'active': selectedTab === 1}">
+			<div aria-hidden="true">
+				<img
+					src="{{ (selectedTab === 1) ? './assets/navs/support-active.png' : './assets/navs/support-inactive.png'}}"
+					alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+			</div>
+			<span class="setting-title">{{ 'SideNav.support' | translate }}</span>
+		</a>
+		<a href="javascript:void(0)" title="{{ 'AppLeftPanel.iconTitle.user' | translate}}"
+			(click)="selectCurrentItem(2); openFeedBack()"
+			[ngClass]="{'active': selectedTab === 2}">
+			<div aria-hidden="true">
+				<img
+					src="{{ (selectedTab === 2) ? './assets/navs/feedback-active.png' : './assets/navs/feedback-inactive.png'}}"
+					alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+			</div>
+			<span class="setting-title">{{ 'SideNav.feedback' | translate }}</span>
+		</a>
+		<a href="javascript:void(0)" title="{{ 'AppLeftPanel.iconTitle.user' | translate}}"
+			(click)="selectCurrentItem(3); openContacts()"
+			[ngClass]="{'active': selectedTab === 3}">
+			<div aria-hidden="true">
+				<img
+					src="{{ (selectedTab === 3) ? './assets/navs/contact-active.png' : './assets/navs/contact-inactive.png'}}"
+					alt="{{ 'AppLeftPanel.iconTitle.close' | translate}}">
+			</div>
+			<span class="setting-title">{{ 'SideNav.contact' | translate }}</span>
+		</a>
+	</div>
+</div>

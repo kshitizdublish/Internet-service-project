@@ -1,0 +1,117 @@
+@import "../../../common/variables";
+
+.remove-site-component {
+    .remove-site-header {
+        border-bottom: 1px solid $darkGray;
+        box-shadow: 2px 2px 4px $grey;
+        padding: 6px 15px;
+        display: inline-flex;
+        width: 100%;
+        height: 57px;
+        .close-remove-form {
+            position: absolute;
+            right: 3%;
+            top: 3%;
+            color: $black;
+        }
+    }
+
+    .heading {
+        font-weight: $font-weight-bold;
+        margin-top: 10px;
+        padding: 0 5px;
+        font-size: 18px;
+    }
+
+    .remove-site-form {
+        margin: 0;
+    }
+
+    .sites-list {
+        padding: 0;
+        height: 70vh;
+        overflow-y: auto;
+    }
+
+    .reset-panel {
+        text-align: right;
+        padding-right: 0;
+        margin-bottom: 0;
+        .reset-btn {
+            background-color: transparent;
+            border-radius: 50px;
+            padding: 8px 30px;
+            border: 1px solid $grey;
+            margin-left: 20%;
+            outline: 0;
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .delete-panel {
+        padding-left: 21px;
+        margin-bottom: 0;
+        .delete-site-btn {
+            background-color: $tangerine;
+            color: $white;
+            border-radius: 50px;
+            padding: 8px 30px;
+            box-shadow: 0px 1px 2px $iron;
+            outline: 0;
+        }
+    }
+
+    .error-text {
+        padding: 2px 15px 15px 15px;
+        font-size: 11px;
+        color: $red;
+    }
+
+    .site-panel {
+        list-style: none;
+        padding: 10px 20px;
+        margin: 0;
+        background-color: $alabaster;
+        &:hover {
+            background-color: $tangerine;
+        }
+    }
+
+    .each-site:hover {
+        color: $white;
+    }
+
+    .site-panel:hover .site-name {
+        color: $white;
+    }
+
+    .site-panel:hover .site-location {
+        color: $white;
+    }
+
+    .site-name {
+        font-weight: $font-weight-bold;
+        color: $black;
+        margin: 0;
+    }
+
+    .site-detail {
+        color: $black;
+        margin-left: 25px;
+    }
+
+    .check-site {
+        zoom: 1.6;
+        margin: 7px 10px 5px -2px;
+    }
+
+    .sites-list {
+        .row {
+            margin: 0;
+            padding-bottom: 5px;
+            background-color: $white;
+        }
+    }
+}

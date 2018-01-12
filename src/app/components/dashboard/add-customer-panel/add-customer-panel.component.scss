@@ -1,0 +1,25 @@
+@import "../../../common/variables";
+@import "../../../common/common";
+
+.add-customer-panel {
+    background-color: $white;
+    border-radius: 10px;
+    
+    .container {
+        width: inherit;
+        .heading-title {
+            font-weight: $font-weight-bold;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .modal-body {
+            padding: unset;
+            .panel-body {
+                padding: 5px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                max-height: calc(100vh - 320px);
+            }
+        }
+    }
+}

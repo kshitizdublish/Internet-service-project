@@ -1,0 +1,28 @@
+<!-- Confirmation Modal -->
+<div class="confirmation-dialog-popup" *ngIf="showConfirmModal">
+	<div class="confirmation-dialog">
+
+		<div class="confirmation-content">
+
+			<div class="confirmation-header">
+				<span class="confirmation-title">{{ confirmHeading }}</span>
+			</div>
+
+			<div class="confirmation-body">
+				<img src="{{ confirmStatusIcon }}" alt="Message" />
+				<p>{{ confirmBody }}</p>
+			</div>
+
+			<div class="confirmation-footer">
+				<button type="button" class="btn cancel-btn" (click)="closeDialog()">
+					{{ 'Confirmation.button.cancel' | translate }}
+				</button>
+				<button type="button" class="btn proceed-btn" (click)="deleteSites()">
+					{{ 'Confirmation.button.proceed' | translate }}
+				</button>
+			</div>
+
+		</div>
+
+	</div>
+</div>

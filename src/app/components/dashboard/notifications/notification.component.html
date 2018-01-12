@@ -1,0 +1,25 @@
+<div
+  class="notification-box"
+  *ngIf="isShowNotification">
+  <div class="msg-container">
+    <div class="notification-header">
+      <div class="pull-left">
+        <span>{{ notificationType }}(s)<b>({{ notificationList.length }})</b></span>
+      </div>
+      <div class="pull-right">
+        <span><b>{{ 'Notification.viewAll' | translate }}</b></span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="notification-list">
+      <div *ngFor="let notification of notificationList">
+        <div class="notification-text">
+          <span>{{ notification.text }}</span>
+        </div>
+        <div class="notification-dt text-right">
+          <span>{{ notification.date }}</span>
+        </div>
+      </div>   
+    </div>
+  </div>
+</div>

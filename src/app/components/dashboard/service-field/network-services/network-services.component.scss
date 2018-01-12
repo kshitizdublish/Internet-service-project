@@ -1,0 +1,209 @@
+@import "../../../../common/variables";
+.network-service-field-comp {
+    overflow-y: auto;
+    height: 70vh;
+    padding: 10px 0;
+    background: $white;
+}
+.md2-accordion-tab-content {
+    padding: 0 !important;
+    border-bottom: none !important;
+}
+.ipvpn-site-list {
+    padding: 3px;
+    float: right;
+    cursor: pointer;
+}
+.service-btn-common {
+    background-color: transparent;
+    border: 1px solid $tangerine;
+    color: $tangerine;
+    outline: 0;
+}
+.service-btn {
+    border-radius: 20px;
+    border: 1px solid $tundora;
+    outline: 0;
+    margin-top: 10px;
+    padding: 8px 24px;
+    &:hover {
+        @extend .service-btn-common;
+    }
+    &:focus {
+        @extend .service-btn-common;
+        outline: 0;
+    }
+    &:active {
+        @extend .service-btn-common;
+        box-shadow: none;
+    }
+}
+.service-btn:active:hover {
+    background-color: transparent;
+    border: 1px solid $tangerine;
+    color: $tangerine;
+    outline: 0;
+}
+.bound-btn-panel {
+    margin-top: 10px;
+}
+.active-bound-btn {
+    background-color: $black;
+    color: $white;
+    outline: 0;
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+.inbound {
+    padding: 6px 30px;
+    border-radius: 10px 0 0 10px;
+    &:active {
+        @extend .active-bound-btn;
+    }
+    &:focus {
+        @extend .active-bound-btn;
+    }
+}
+.outbound {
+    padding: 6px 30px;
+    margin-left: -4px;
+    border-radius: 0 10px 10px 0;
+    &:active {
+        @extend .active-bound-btn;
+    }
+    &:focus {
+        @extend .active-bound-btn;
+    }
+}
+.rules-btn {
+    padding: 8px 40px;
+}
+.updateRAccess img {
+    margin: 0 10px;
+}
+.button-prop-change {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    span {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+.toggle-menu-arrow {
+    color: $doveGray;
+    float: right;
+    padding-top: 4px;
+    font-weight: bolder;
+}
+.fieldHeading {
+    color: $darkGray;
+}
+.network-options {
+    font-size: 14px;
+    padding: 0px 5px;
+}
+.tenant-header {
+    width: 100%;
+}
+// search field css
+.search-icon {
+    position: absolute;
+    top: 3px;
+    left: 6px;
+}
+.search-panel {
+    width: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    input {
+        width: 100%;
+        height: 30px;
+        border: 1px solid $darkGray;
+        font-size: 11px;
+        float: left;
+        padding: 0 15px 0 35px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+    }
+}
+.active-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin-right: 4px;
+    background-color: $green;
+}
+.site-list-table {
+    .site-status {
+        padding: 13px 22px;
+    }
+    .site-modify-options {
+        padding: 0;
+    }
+}
+.location-left-panel {
+    ul {
+        display: inline-table;
+        width: 100%;
+        border-collapse: separate;
+        background: $mercury;
+        margin: 0;
+        padding: 0;
+    }
+    ul li {
+        display: table-row-group;
+    }
+    ul li span {
+        display: table-cell;
+        border-bottom: 1px solid $SilverChalice;
+        padding: 10px;
+    }
+    ul li .fieldHeading {
+        width: 30%;
+        font-size: 14px;
+    }
+    ul li .fieldDetail {
+        border-left: 1px solid $SilverChalice;
+        width: 70%;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+.md2-accordion-header {
+    border-bottom: 2px solid $iron !important;
+    font-weight: bold !important;
+    padding: 0 10px;
+}
+.md2-accordion-header-icon {
+    right: 52px !important;
+}
+.action.edit {
+    float: right;
+    cursor: pointer;
+    line-height: inherit;
+    color: #b9b5b5;
+}
+
+
+.create-wifi-btn-panel {
+    text-align: center;
+    padding: 20px;
+}
+
+.show-wifi {
+    width: 128px;
+    height: 42.74px;
+    background: $carnation;
+    border-radius: 4px;
+    border: 1px solid $carnation;
+    color: #fff;
+    font-size: 12px;
+}

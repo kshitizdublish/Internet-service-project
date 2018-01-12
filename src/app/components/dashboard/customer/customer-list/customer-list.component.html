@@ -1,0 +1,32 @@
+<!-- Customer List : starts -->
+<div class="client-list">
+	<div class="modal-body">
+		<div class="customer-list-search">
+			<div class="row">
+				<div class="col-sm-12 client-search">
+					<div class="container-2">
+						<input type="search" #searchTxt placeholder="{{ 'CustomerPanel.searchByLocation' | translate}}" (keyup)="searchClient(searchTxt.value)"
+						/>
+						<img class="clientlist-search-icon" src="./assets/navs/header_search.png" alt="search">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row each-client">
+			<div class="col-sm-12 client-list-header">
+				<div class="account-no">Account No</div>
+				<div class="account-name">Customer Name</div>
+			</div>
+		</div>
+		<div class="customer-list-container">
+			<div class="each-client" *ngFor="let client of customerList | searchPipe:filterargs">
+				<a href="javascript:void(0)" (click)="showClientLocation(client)">
+					<div class="col-sm-12 client-panel" [ngClass]="{ 'client-panel_selected' : client.isSelected}">
+						<div class="account-no">{{client.tenantName}}</div>
+						<div class="account-name">{{client.customerName}}</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

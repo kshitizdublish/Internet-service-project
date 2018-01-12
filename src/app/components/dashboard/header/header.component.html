@@ -1,0 +1,72 @@
+<div class="navbar-static-top">
+    <div class="container-fluid header-container">
+
+        <div class="header-left-panel row">
+            <div class="col-md-6 toggle-menu">
+                <a class="toggle-left-panel" *ngIf="showToggleMenu" title="{{ 'Header.toggleLeftPanel' | translate }}" (click)="showLeftPanel()">
+                   <img src="./assets/navs/Humberger.png"
+            alt="{{ 'Header.search' | translate}}" >
+            </a>
+            </div>
+            <div class="col-md-6 logo-panel">
+                <a class="header-logo">
+                    <img src="./assets/logo.png" alt="vodafone ziggo" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Customer Portal Heading -->
+        <div class="client-name-panel">
+            <div class=""><span class="client-name-customer">{{ 'Header.customer' | translate }}</span>  <span class="client-name-portal">{{ 'Header.portal' | translate }}</span></div>
+        </div>
+
+        <div class="client-list-panel" *ngIf="showClientListPanelAttr">
+            <div class="client-list">
+                <button class="client-list-header" (click)="toggleClientList();">
+                    <div class="search-header-account-name">{{ clientName }}</div>
+                    <div class="search-header-down-arrow">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                </button>
+            </div>
+            <div>
+                <!-- Generating Client list pop up -->
+                <app-customer-list class="float-clientlist" [ngClass]="{ 'float-clientlist_show': showClientList }">
+                </app-customer-list>
+            </div>
+            </div>
+
+        <!-- Notification panel showing on click of notification image -->
+        <app-notification [category]="'Alarm'" ></app-notification> 
+
+        <!-- Search -->
+        <app-autocomplete *ngIf="showLocationSearch"></app-autocomplete>
+
+        <!-- Alert Panel -->
+        <div class="alert-panel" [ngClass]="{ 'profile-icon-margin': !showLocationSearch }">
+            <a href="javascript:void(0)" title="{{ 'Header.alarm' | translate }}">
+                <img src="./assets/navs/alarm_clock.png"
+                    alt="{{ 'Header.alarm' | translate }}">
+            </a>
+            <a href="javascript:void(0)" (click)="toggleNotifications()" title="{{ 'Header.notification' | translate }}">
+                <img src="./assets/navs/notification.png"
+                    alt="{{ 'Header.notification' | translate }}">
+            </a>
+            <a href="javascript:void(0)" title="{{ 'Header.store' | translate }}" *ngIf="showLocationSearch">
+                <img src="./assets/navs/store.png"
+                    alt="{{ 'Header.store' | translate }}">
+            </a>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="header-right-panel">
+            <div class="profile">
+                <a href="javascript:void(0)" title="{{ 'Header.user' | translate}}"
+                    (click)="showProfileMenu()">
+                    <img src="./assets/navs/header_profile.png"
+                        alt="{{ 'Header.userPhoto' | translate}}">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

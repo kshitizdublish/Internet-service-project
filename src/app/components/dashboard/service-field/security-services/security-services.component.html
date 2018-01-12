@@ -1,0 +1,63 @@
+<div class="security-service-field-comp">
+	<md2-accordion [multiple]="multiple">
+		<md2-accordion-tab>
+			<md2-accordion-header class="network-options">{{ 'SiteInfoPage.security.toggleServices.cloudFirewall' | translate }}
+				<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+			</md2-accordion-header>
+			<div id="cloudFirewall">
+				<ul>
+					<li>
+						<span class="fieldHeading">{{ 'SecurityField.cloudFirewall.acl' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li class="firewallSubHeading">
+						<span>{{ 'SecurityField.cloudFirewall.inbound' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'SecurityField.cloudFirewall.acl' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'SecurityField.cloudFirewall.protocol' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'SecurityField.cloudFirewall.pRange' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li class="firewallSubHeading">
+						<span>{{ 'SecurityField.cloudFirewall.outbound' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'SecurityField.cloudFirewall.type' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">Protocol:</span>
+						<span class="fieldDetail"></span>
+					</li>
+					<li>
+						<span class="fieldHeading">{{ 'SecurityField.cloudFirewall.pRange' | translate }}</span>
+						<span class="fieldDetail"></span>
+					</li>
+				</ul>
+			</div>
+		</md2-accordion-tab>
+
+		<md2-accordion-tab>
+				<md2-accordion-header class="network-options">{{ 'SiteInfoPage.security.toggleServices.acl' | translate }}
+						<i class="fa fa-ellipsis-v action edit" aria-hidden="true"></i>
+				</md2-accordion-header>
+				
+				<div id="cloudFirewall" *ngIf="hasACL">
+					<div class="create-wifi-btn-panel">
+						<button class="show-wifi" (click)="createAcl()">
+							{{ 'ConnectivityField.wifi.createNow' | translate }}
+						</button>
+					</div>
+				</div>
+			</md2-accordion-tab>
+	</md2-accordion>
+</div>

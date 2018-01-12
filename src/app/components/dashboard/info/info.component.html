@@ -1,0 +1,53 @@
+<!-- site details panel -->
+<div class="container-fluid site-details-box">
+      <div class="row info-header">
+            <div class="col-md-12 col-sm-12 col-properties">
+                  <span class="site-details-header-text">{{markerObj.name}}</span>
+            </div>
+      </div>
+      <div class="row info-body">
+            <div class="col-sm-12 col-md-12">
+                  <div class="body-info-left">
+                        <div>
+                              <span class="site-detail-labels">{{ 'agmInfoPopup.location' | translate}}: </span>
+                              <span class="site-detail-values location-value-ellipses" title="{{markerObj.location}}">{{markerObj.location}}</span>
+                        </div>
+                        <div>
+                              <span class="site-detail-labels">{{ 'agmInfoPopup.csrType' | translate}}: </span>
+                              <span class="site-detail-values location-value-ellipses">{{markerObj.csrType}}</span>
+                        </div>
+                  </div>
+                  <div class="body-info-right">
+                        <div>
+                              <span class="site-detail-labels">{{ 'agmInfoPopup.areaName' | translate}}: </span>
+                              <span class="site-detail-values location-value-ellipses" title="{{markerObj.area}}">{{markerObj.area}}</span>
+                        </div>
+
+                        <div>
+                              <span class="site-detail-labels">{{ 'agmInfoPopup.wanAccesType' | translate}}: </span>
+                              <span class="site-detail-values location-value-ellipses" title="{{markerObj.wanAccessType}}">{{markerObj.wanAccessType}}</span>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <div class="row info-footer">
+            <div class="col-md-3 col-sm-3">
+                  <div class="info-footer-icon">
+                        <img src="./assets/navs/vpn-site-details.png" alt="{{ 'SiteDetailsPanel.vpn' | translate}}">
+                  </div>
+                  <div class="info-footer-label">{{ 'agmInfoPopup.ipvpnIcon' | translate}}</div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                  <div class="info-footer-icon">
+                        <img src="./assets/navs/wifi-site-details.png" alt="{{ 'SiteDetailsPanel.wifi' | translate}}">
+                  </div>
+                  <div class="info-footer-label">{{ 'agmInfoPopup.wifiIcon' | translate}}</div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                  <div class="info-footer-icon">
+                        <img src="./assets/navs/lan-site-details.png" alt="{{ 'SiteDetailsPanel.lan' | translate}}">
+                  </div>
+                  <div class="info-footer-label">{{ 'agmInfoPopup.lanIcon' | translate}}</div>
+            </div>
+      </div>
+</div>

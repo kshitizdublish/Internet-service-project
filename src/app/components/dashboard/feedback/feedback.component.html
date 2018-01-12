@@ -1,0 +1,69 @@
+<nav class="navbar  nav-bar-props">
+   <div class="container-fluid">
+      <app-header [showClientListPanelAttr]="false" [showLocationSearch]="false" class="feed-back-header"></app-header>
+      <app-user-profile *ngIf="showProfileMenu"></app-user-profile>
+   </div>
+</nav>
+<div (click) = "closeAllPanels()">
+   <div class="row row-padding">
+      <div class="header-feedback">
+         {{ 'CreateFeedBack.feedBackHeader' | translate}}
+      </div>
+      <div class="col-sm-3">
+         <div class="col-sm-6 side-nav-text">
+            {{ 'CreateFeedBack.sidenavText' | translate }}
+         </div>
+      </div>
+      <div class="col-sm-7">
+         <form [formGroup]='createFeedBackForm' (ngSubmit)="submitForm(createFeedBackForm.value, $event)">
+         <div class="row padding-feedback-row">
+            <div class="col-sm-6">
+               <div class="form-group">
+                  <label class="feed-back-label">{{ 'CreateFeedBack.contactName' | translate}} <span class="mandatory">*</span></label>
+                  <input
+                     type="text" [formControl]="createFeedBackForm.controls['contactName']" autocorrect="off" autocapitalize="off" class="form-control input-field-style"
+                     placeholder="{{ 'CreateFeedBack.contactNamePlaceholder' | translate }}" required>
+                  <span class="separator"></span>
+               </div>
+               <div class="form-group">
+                  <label class="feed-back-label">{{ 'CreateFeedBack.email' | translate}}</label>
+                  <input
+                     type="text" autocorrect="off" autocapitalize="off" class="form-control input-field-style"
+                     placeholder="{{ 'CreateFeedBack.emailPlaceholder' | translate }}">
+                  <span class="separator"></span>
+               </div>
+               <div class="form-group">
+                  <label class="feed-back-label">{{ 'CreateFeedBack.phone' | translate}}</label>
+                  <input
+                     type="number" autocorrect="off" autocapitalize="off" class="form-control input-field-style"
+                     placeholder="{{ 'CreateFeedBack.phonePlaceholder' | translate }}">
+                  <span class="separator"></span>
+               </div>
+               <div class="form-group">
+                  <label class="feed-back-label">{{ 'CreateFeedBack.subject' | translate}}</label>
+                  <input
+                     type="text" autocorrect="off" autocapitalize="off" class="form-control input-field-style"
+                     placeholder="{{ 'CreateFeedBack.subjectPlaceholder' | translate }}">
+                  <span class="separator"></span>
+               </div>
+               <div class="form-group">
+                  <label class="feed-back-label">{{ 'CreateFeedBack.tellUsMore' | translate}}</label>
+                  <textarea type="text"  
+                     class="form-control feed-back-text-area"></textarea>
+               </div>
+               <div class="row button-container">
+                  <div class="col-sm-12 form-group create-panel">
+                     <button type="submit" class="btn btn-create-site pull-right">
+                     {{ 'CreateFeedBack.submit' | translate}}
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div>
+            <em class="error-text-msg">{{createSiteErrorMsg}}</em>
+         </div>
+         </form>
+      </div>
+   </div>
+</div>

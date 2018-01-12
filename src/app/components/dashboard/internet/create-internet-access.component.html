@@ -1,0 +1,108 @@
+<div class="create-internet-access side-input-panel">
+    <!-- Header -->
+    <div class="panel-close text-right">
+        <a href="javascript: void(0);" (click)="toggleCreateInternetForm()"
+            title="{{ 'CreateInternetAccess.close' | translate }}">
+            <img src="./assets/navs/close.png" alt="{{ 'CreateInternetAccess.close' | translate }}">
+        </a>
+    </div>
+    <div class="create-internet-access-header header">
+        <span class="caption-primary">{{ 'CreateInternetAccess.create' | translate }}</span>
+        <span class="caption-secondary">{{ 'CreateInternetAccess.internetAccess' | translate }}</span>
+    </div>
+
+    <!-- Internet Access Form -->
+    <div class="create-internet-access-form">
+        <form
+            [formGroup]='createInternetAccessForm'
+            (ngSubmit)="submitCreateInternetAccessForm(createInternetAccessForm.value, $event)"
+            novalidate>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input
+                            type="text" autocorrect="off" autocapitalize="off" class="form-control"
+                            [ngClass]="{'touched': formModal.accessName !== ''}"
+                            formControlName="accessName"
+                            (keyup)="isFormActive()"
+                            [(ngModel)]="formModal.accessName">
+                        <label>{{ 'CreateInternetAccess.accessName' | translate }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input
+                            type="text" autocorrect="off" autocapitalize="off" class="form-control"
+                            [ngClass]="{'touched': formModal.siteName !== ''}"
+                            formControlName="siteName"
+                            (keyup)="getAvailableSites(); isFormActive()"
+                            [(ngModel)]="formModal.siteName">
+                        <label>{{ 'CreateInternetAccess.siteName' | translate }}</label>
+                        <div class="site-suggestion-box" *ngIf="currentSiteList.length >= 0">
+                            <ul class="filter-list">
+                                <li
+                                    class="filter-list-item"
+                                    *ngFor="let site of currentSiteList"
+                                    (click)="selectSite(site)">
+                                    <div class="row">
+                                        <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8 item-name">{{ site.name }}</span>
+                                        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 item-state">{{ site.actionState }}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input
+                            type="text" autocorrect="off" autocapitalize="off" class="form-control"
+                            [ngClass]="{'touched': formModal.allocationQuantity !== ''}"
+                            formControlName="allocationQuantity"
+                            (keyup)="checkForNumberOnly(1, 5); isFormActive()"
+                            [(ngModel)]="formModal.allocationQuantity">
+                        <label>{{ 'CreateInternetAccess.allocationQuantity' | translate }}</label>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <select
+                            formControlName="ddosDeployment"
+                            (change)="isFormActive()"
+                            (click)="isFormActive()"
+                            [(ngModel)]="formModal.ddosDeployment">
+                            <option value="" *ngIf="!ddosDeploymentOption.length"></option>                            
+                            <option
+                                *ngFor="let option of ddosDeploymentOption;"
+                                value="{{ option.value }}">
+                                {{ option.label }}
+                            </option>
+                        </select>
+                        <label>{{ 'CreateInternetAccess.ddosDeployment' | translate }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <textarea
+                            formControlName="description"
+                            (keyup)="isFormActive()"
+                            [(ngModel)]="formModal.description"></textarea>
+                        <label>{{ 'CreateInternetAccess.description' | translate }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-form text-right">
+                <button
+                    type="submit"
+                    [ngClass]="{'disabled': !isFormValid || this.createInternetAccessForm.pristine}"
+                    [disabled]="!isFormValid || this.createInternetAccessForm.pristine">{{ 'CreateInternetAccess.createButton' | translate }}</button>
+            </div>
+        </form>
+    </div>
+</div>

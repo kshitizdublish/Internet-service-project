@@ -1,0 +1,32 @@
+@import "../../../common/variables";
+
+.create-internet-access {
+    position: relative;
+    .site-suggestion-box {
+        position: absolute;
+        width: 100%;
+        z-index: 30;
+
+        .filter-list {
+            position: absolute;
+            margin: 1px 0;
+            padding: 0;
+            list-style: none;
+            width: 91%;
+            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            .filter-list-item {
+                background: $alabaster;
+                padding: 8px 12px;
+                border-bottom: 0.5px solid $iron;
+                cursor: pointer;
+                .item-state {
+                    color: $doveGrayAutoFill;
+                }
+                &:hover {
+                    background: $white;
+                }
+            }
+        }
+    }
+}

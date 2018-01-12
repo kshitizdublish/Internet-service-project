@@ -1,0 +1,53 @@
+@import "../../../../common/variables";
+@import "../../../../common/common";
+
+.customer-image-container {
+  padding-bottom: 20px;
+  text-align: center;
+  display: inline-table;
+  cursor: pointer;
+}
+.customer-image__body{
+  text-align: center;
+  position: relative;
+  max-width: 92px;
+  max-height: 92px;
+  min-width: 92px;
+  min-height: 92px;
+  border-radius: 50px;
+
+  background-color: $white;
+  -moz-box-shadow: 2px 2px 4px $grey;
+  -webkit-box-shadow: 2px 2px 4px $grey;
+  box-shadow: 2px 2px 4px $grey;
+  display:inline-block;
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+  .customer-image__body{
+    max-width: 80px;
+    max-height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+  }
+ }
+
+.customer-image-circle {
+  border-radius: 50%;
+
+  max-width: 72px;
+  max-height: 72px;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.customer-title {
+  font-weight: bold;
+}

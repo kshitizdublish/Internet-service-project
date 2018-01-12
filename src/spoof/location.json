@@ -1,0 +1,88 @@
+{
+	"locations": {
+		"cordins": [
+			{
+				"name": "Amsterdam Vodafoneziggo",
+				"latitude": 52.36553758871975,
+				"longitude": 4.9053955078125,
+				"stat": "green",
+				"Icon": "{url: './assets/icons/gray.png' }"
+			},
+			{
+				"name": "Rotterdam Vodafoneziggo",
+				"latitude": 51.91039070988962,
+				"longitude": 4.50164794921875,
+				"stat": "wifi",
+				"Icon": "{url: './assets/icons/gray.png' }"
+			},
+			{
+				"name": "Eindhoven Vodafoneziggo",
+				"latitude": 51.43346414054374,
+				"longitude": 5.4876708984375,
+				"stat": "cloud",
+				"Icon": "{url: './assets/icons/gray.png' }"
+			},
+			{
+				"name": "Arnhem Vodafoneziggo",
+				"latitude": 51.984880139916626,
+				"longitude": 5.9051513671875,
+				"stat": "both",
+				"Icon": "{url: './assets/icons/gray.png' }"
+			}
+		],
+		"pointers": [
+			{
+				"color": "#ff0000",
+				"latlong": [
+					{
+						"latitude": 52.36553758871975,
+						"longitude": 4.9053955078125
+					},
+					{
+						"latitude": 51.91039070988962,
+						"longitude": 4.50164794921875
+					}
+				]
+			},
+			{
+				"color": "#ffff00",
+				"latlong": [
+					{
+						"latitude": 51.91039070988962,
+						"longitude": 4.50164794921875
+					},
+					{
+						"latitude": 51.43346414054374,
+						"longitude": 5.4876708984375
+					}
+				]
+			},
+			{
+				"color": "#0000ff",
+				"latlong": [
+					{
+						"latitude": 51.43346414054374,
+						"longitude": 5.4876708984375
+					},
+					{
+						"latitude": 51.984880139916626,
+						"longitude": 5.9051513671875
+					}
+				]
+			},
+			{
+				"color": "#0ff0ff",
+				"latlong": [
+					{
+						"latitude": 51.984880139916626,
+						"longitude": 5.9051513671875
+					},
+					{
+						"latitude": 52.36553758871975,
+						"longitude": 4.9053955078125
+					}
+				]
+			}
+		]
+	}
+}

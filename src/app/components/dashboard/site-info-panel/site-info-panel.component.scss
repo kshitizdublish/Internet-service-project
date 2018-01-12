@@ -1,0 +1,270 @@
+@import "../../../common/variables";
+@import "../../../common/common";
+
+//common style
+.service-panel-hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+// specific css style
+.site-info-page {
+    text-align: center;
+}
+
+.left-panel {
+    overflow: visible;
+    width: 50px;
+    padding: 13px 0 5px;
+    background: #191c21;
+    color: #abb;
+    font-size: .92857rem;
+    position: fixed;
+    z-index: 40;
+    bottom: 0;
+    top: 45px;
+    left: 0;
+}
+
+.overview {
+    .btn {
+        border-radius: 20px;
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}
+
+.right-panel {
+    float: right;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    height: 93vh;
+    p {
+        margin: 0;
+    }
+}
+
+.location-header {
+    box-shadow: 0px 2px 2px $iron;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    display: inline-flex;
+    width: 100%;
+    height: 85px;
+    .location-panel {
+        width: inherit;
+        .location-panel-logo {
+            float: left;
+            width: 5%;
+            img {
+                padding-top: 42px;
+                padding-left: 15px;
+            }
+        }
+        .location-heading {
+            float: left;
+            width: 40%;
+            font-size: 17px;
+            height: 100%;
+            padding-left: 10px;
+        }
+        .location {
+            float: left;
+            width: 22%;
+            height: 100%;
+            padding: 20px 15px;
+            .location-label {
+                font-size: 14px;
+                color: $SilverChalice ;
+            }
+            .location-value {
+                font-size: 16px;
+                color: $SilverChalice;                
+                font-weight: bold;
+            }
+        }
+        .csr-type {
+            float: left;
+            width: 22%;
+            height: 100%;
+            padding: 20px 15px;
+            .csrtype-label {
+                font-size: 14px;
+                color: $SilverChalice ;
+            }
+            .csrtype-value {
+                font-size: 16px;
+                color: $SilverChalice;
+                font-weight: bold;
+            }
+        }
+        .close-icon {
+            float: left;
+            width: 10%;
+            height: 100%;
+            padding: 28px 10px;
+            .location-panel-close-icon {
+                width: 24px;
+                height: 24px;
+                padding: 0px 5px 0px 45px;
+                img {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.location-body {
+    height: inherit;
+    background: $alabaster;
+    .location-left-panel {
+        width: 45%;
+        float: left;
+    }
+    .location-right-panel {
+        width: 55%;
+        float: left;
+        height: inherit;
+        .site-bandwidth-info-panel {
+            height: inherit;
+        }
+    }
+}
+
+.site-name-option {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto;
+    &:focus + .separator {
+        transform: scaleX(1) translateY(-2px);
+        opacity: 1;
+    }
+    & option {
+        font-size: 16px;
+    }
+}
+select {
+    background-position-y: 15px;
+}
+.header-col-sep {
+    float: left;
+    width: 2px;
+    height: 40%;
+    border-right: 1px solid $agmma;
+    margin: 24px 0;
+    padding: 12px;
+}
+
+.location-heading {
+    font-size: 14px;
+}
+
+.location {
+    font-size: 12px;
+    padding-left: 4px;
+}
+
+.create-site-panel {
+    right: 12%;
+    top: 2%;
+    position: fixed;
+    display: inline-flex;
+    cursor: pointer;
+    .create-site-text {
+        margin-top: 6px;
+        a {
+            color: $black;
+            font-size: 12px;
+        }
+    }
+}
+
+.fa-plus-circle {
+    color: $tangerine;
+}
+
+.update-services {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    height: 84vh;
+    font-size: 11px;
+    .update-services-heading {
+        font-weight: bold;
+        font-size: 14px;
+        padding-left: 14px;
+    }
+}
+
+.services-panel {
+    border-bottom: 2px solid $tangerine;
+    margin: 0;
+    .service-panel-tab {
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: center;
+    }
+    div {
+        cursor: pointer;
+    }
+    .active {
+        color: $tangerine;
+    }
+    .service-name {
+        font-size: 12px;
+        margin-bottom: 12px;
+        margin-top: 4px;
+        font-weight: 600;
+    }
+}
+
+.nav {
+    box-shadow: 1px 1px 5px;
+    width: 95%;
+    li {
+        margin-left: 0;
+        margin-bottom: 0;
+        border-right: 1px solid;
+        a {
+            font-size: $font-size-s;
+            padding: 6px;
+            border-radius: 0;
+        }
+    }
+}
+
+.nav-pills {
+    padding: 0;
+    li.active > a {
+       background-color: $tangerine;
+    }
+}
+
+.create-site-icon img {
+    margin-top: -2px;
+}
+
+.site-options-panel {
+    right: 5%;
+    top: 2%;
+    position: absolute;
+    outline: 0;
+    .site-options-dropdown {
+        color: $black;
+        border-color: transparent;
+        background-color: $white;
+        outline: 0;
+        box-shadow: none;
+        padding: 6px 0;
+    }
+    .dropdown-menu {
+        left: -100px;
+        min-width: 110px;
+    }
+}

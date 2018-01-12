@@ -1,0 +1,16 @@
+<div class="site-info-item">
+  <div class="info-divider clearfix" [ngClass]="{
+    'sitebg-color':siteInfoItem.isSelected,
+    'first-item': firstItem,
+    'last-item': lastItem
+    }"  (click)="getSelected()">
+    <div>{{siteInfoItem.name}}</div>
+    <div class="value">
+      <div class="value-left">
+        <img *ngIf="siteInfoItem.isSelected" [src]="siteInfoItem.activeImgPath" alt="{{ siteInfoItem.name}}">
+        <img *ngIf="!siteInfoItem.isSelected" [src]="siteInfoItem.imgPath" alt="{{ siteInfoItem.name}}">
+      </div>
+      <div class="value-right">{{siteInfoItem.value}}</div>
+    </div>
+  </div>
+</div>

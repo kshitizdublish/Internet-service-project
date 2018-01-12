@@ -1,0 +1,107 @@
+@import "../../../../common/variables";
+
+.client-list {
+    background-color: $emperer;
+    border-radius: 5px;
+    color: $iron;
+    a {
+        color: $black;
+    }
+    .modal-body {
+        padding: 0;
+    }
+.customer-list-container {
+        .account-no {
+            width: 30%;
+            float: left;
+            padding: 5px 10px;
+        }
+        .account-name {
+            width: 70%;
+            float: left;
+            padding: 5px 10px;
+        }
+    }
+    .client-list-header {
+        height: 35px;
+        color: $SilverChalice;
+        .account-no {
+            width: 30%;
+            float: left;
+            padding: 8px 10px;
+        }
+        .account-name {
+            width: 70%;
+            float: left;
+            padding: 8px 10px;
+        }
+
+    }
+    .customer-list-container {
+        overflow-y: auto;
+        max-height: 325px;
+        overflow-x: hidden;
+        .each-client {
+            padding-bottom: 1px;
+            background-color: $emperer;
+            :hover {
+                background-color: $tundora;
+            }
+        }
+        .client-panel {
+            list-style: none;
+            padding: 5px 0px;
+            margin: 0;
+            color: $grey;
+        }
+        .client-panel_selected {
+            background-color: $tundora;
+        }
+    }
+
+    .site-name {
+        font-weight: $font-weight-bold;
+    }
+
+    // search field css       
+    .clientlist-search-icon {
+        position: absolute;
+        top: 8px;
+        right: 3%;
+    }
+      
+    .container-2 {
+        width: 100%;
+        vertical-align: middle;
+        white-space: nowrap;
+        position: relative;
+        input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            font-size: 11px;
+            float: left;
+            padding-left: 10px;
+            background: $tundora;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+    }
+
+}
+
+.each-client:hover .client-panel {
+    color: #CCD0D2;
+}
+
+.add-customer-panel_show {
+    position: absolute;
+    z-index: 11;
+    top: 118px;
+    right: 10px;
+    left: inherit;
+    border: 1px solid $darkGray;
+    border-radius: 10px;
+    box-shadow: 2px 6px 12px $darkGray;
+  }
